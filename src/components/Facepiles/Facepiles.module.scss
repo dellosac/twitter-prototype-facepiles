@@ -16,6 +16,8 @@
 
     &.directionrighttoleft {
         flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: flex-end;
     }
 
     > li {

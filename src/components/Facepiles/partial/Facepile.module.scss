@@ -5,11 +5,11 @@
 }
 
 .avatarIconWrapper {
-    width: 16px;
-    height: 16px;
-    border: white 1px solid;
-    border-radius: 100%;
-    background-color: grey;
+  width: 16px;
+  height: 16px;
+  border: white 1px solid;
+  border-radius: 100%;
+  background-color: grey;
 }
 
 .avatarIcon {
@@ -26,8 +26,21 @@
   top: 0;
   right: -1px;
 
+  &.why {
+    right: 7px;
+  }
+
   animation: notificationScale 300ms ease-in-out;
 }
+
+.why {
+  right: -1px;
+}
+
+.directionrighttoleft {
+  left: -1px;
+}
+
 
 @keyframes notificationScale {
   0% {

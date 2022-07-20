@@ -35,7 +35,6 @@ export default function App() {
 
   return (
     <AuthProviderWrapper>
-      <AnimatePresence>
         <Routes location={location} key={nextPath}>
           <Route path="/test" element={<TestPickerLayout />}>
             <Route path="login" element={<LoginPage />} />
@@ -91,7 +90,6 @@ export default function App() {
             <Route path="*" element={<NoMatch />} />
           </Route>
         </Routes>
-      </AnimatePresence>
     </AuthProviderWrapper>
   );
 }

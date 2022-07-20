@@ -7,23 +7,18 @@ const MOCK_DATA = {
 
 class MockDataProviderSingleton {
   constructor() {
-    const clonedTweetsArray = [...TWEETS]
+    const clonedTweetsArray = JSON.parse(JSON.stringify(TWEETS));
 
     this._timeline = clonedTweetsArray;
     this._timer = null;
-    this.setupTimer();
-
-    console.log("MOCK_DATA", MOCK_DATA.ACCOUNTS);
+    // this.setupTimer();
   }
 
   checkToAddTweet() {
     if (Math.random() >= 0.3) {
       const randomTweetIndex = Math.floor(Math.random() * (this._timeline.length))
       let randomTweetReply = this._timeline[randomTweetIndex].replies.find(reply => !reply.show);
-      console.log("randomTweetReply", randomTweetReply);
       randomTweetReply.show = true;
-
-      console.log("this._timeline reply", this._timeline)
       // this._timeline.forEach(tweet => {
       //   let reply = tweet.replies.find(reply => !reply.show);
       //   reply.show = true;
@@ -38,11 +33,14 @@ class MockDataProviderSingleton {
   }
 
   reset() {
-    console.log("reset");
-    this._timeline.splice(0, this._timeline.length);
-    const clonedTweetsArray = [...TWEETS]
+    clearInterval(this._timer);
 
-    this._timeline.push(...clonedTweetsArray);
+    const clonedTweetsArray = JSON.parse(JSON.stringify(TWEETS));
+
+    this._timeline = clonedTweetsArray;
+
+    this._timer = null;
+    console.log("reset", this._timeline);
   }
 
   add(tweet) {
@@ -50,6 +48,10 @@ class MockDataProviderSingleton {
   }
 
   get() {
+    if(this._timer === null) {
+      this.setupTimer();
+    }
+
     return this._timeline;
   }
 
@@ -61,6 +63,6 @@ class MockDataProviderSingleton {
 }
 
 const mockDataProvider = new MockDataProviderSingleton();
-Object.freeze(mockDataProvider);
+// Object.freeze(mockDataProvider);
 
 export default mockDataProvider;

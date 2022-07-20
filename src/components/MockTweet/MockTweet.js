@@ -21,8 +21,6 @@ const MockTweet = ({
   const hasSocialRetweets = socialretweets.length > 0;
   let navigate = useNavigate();
 
-  console.log("facePileDirection", facePileDirection);
-
   // Events
   const onRootClick = (e) => {
     e.preventDefault();
