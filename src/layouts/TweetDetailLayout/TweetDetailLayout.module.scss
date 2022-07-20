@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .tweetDetail {
-  padding: 44px 16px;
+  padding: 44px 16px 0px;
 }
 
 .header {
@@ -121,4 +121,19 @@
 
 .footerIconWrapper {
     border-bottom: 1px $gray-300 solid;
+}
+
+.mockReplies {
+  width: 100%;
+  height: auto;
+  margin-top: 16px;
+}
+
+.mockReplyFooter {
+  width: 100%;
+  height: auto;
+  margin-top: 16px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }

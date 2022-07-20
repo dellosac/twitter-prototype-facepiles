@@ -99,6 +99,9 @@ const TweetDetailLayout = () => {
           </section>
         </footer>
       </main>
+      <StaticItem className={styles.mockReplies} src="/images/mockimages/mockTweetReplies" />
+
+      <StaticItem className={styles.mockReplyFooter} src="/images/mockimages/mockReplyFooter" />
     </article>
   );
 };
