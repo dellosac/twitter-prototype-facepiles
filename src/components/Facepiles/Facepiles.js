@@ -33,9 +33,7 @@ const Facepiles = ({ replies, direction }) => {
     let clonedFacepiles = [...replies];
     while (clonedFacepiles.length >= 4) {
       clonedFacepiles.shift();
-      console.log("clonedFacepiles 1", clonedFacepiles.length);
     }
-    console.log("clonedFacepiles 2", clonedFacepiles.length);
     setFacepiles(clonedFacepiles);
   }, [replies]);
 
@@ -60,7 +58,11 @@ const Facepiles = ({ replies, direction }) => {
       as="ul"
       axis="x"
       onReorder={setFacepiles}
-      className={`${styles.facepilesroot} ${direction === "lefttoright" ? styles.directionlefttoright : styles.directionrighttoleft }`}
+      className={`${styles.facepilesroot} ${
+        direction === "lefttoright"
+          ? styles.directionlefttoright
+          : styles.directionrighttoleft
+      }`}
       values={replies}
       onClick={facePilesOnClick}
       style={{
@@ -74,8 +76,6 @@ const Facepiles = ({ replies, direction }) => {
             facepileData.handle
           );
 
-          console.log("facepileData.id", facepileData.id);
-
           return (
             <Facepile
               key={`facepile-key-${facepileData.id}`}
@@ -83,6 +83,7 @@ const Facepiles = ({ replies, direction }) => {
               avatarImage={tweetAccount.avatar}
               index={index}
               total={facepiles.length - 1}
+              direction={direction}
             />
           );
         })}

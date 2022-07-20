@@ -89,7 +89,6 @@ const TweetComposerLayout = ({
     let clonedTweetThread = [...tweetThread];
     clonedTweetThread.splice(activeTweetIndex + 1, 0, "");
 
-    console.log("clonedTweetThread", clonedTweetThread);
     setTweetThread(clonedTweetThread);
   };
 
@@ -97,7 +96,6 @@ const TweetComposerLayout = ({
     let clonedTweetThread = [...tweetThread];
     clonedTweetThread.splice(activeTweetIndex, 1);
 
-    console.log("clonedTweetThread", clonedTweetThread);
     setTweetThread(clonedTweetThread);
     setActiveTweetIndex(0);
   };
