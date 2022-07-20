@@ -1,0 +1,68 @@
+.contentContainer {
+  background-color: white;
+  padding: 16px 32px;
+  margin: 16px 0px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(101, 119, 134, 0.2),
+    0 0 3px 1px rgba(101, 119, 134, 0.15);
+}
+
+.label {
+  display: inline-block;
+  padding: 8px 0;
+  font-weight: 700;
+}
+
+.submitLink {
+  background-color: rgb(15, 20, 25);
+  border: none;
+  padding: 16px;
+  color: white;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(101, 119, 134, 0.2),
+    0 0 3px 1px rgba(101, 119, 134, 0.15);
+  font-weight: 600;
+  text-decoration: none;
+  margin: 16px 0;
+  transition: background-color 150ms ease-in;
+
+  float: right;
+
+  &:hover {
+    background-color: rgb(39, 44, 48);
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
+
+.loadingWrapper {
+  display: flex;
+
+  .loadedCopy {
+    align-self: center;
+    margin-bottom: 32px;
+
+    > p {
+      margin: 0;
+    }
+  }
+
+  .loadingCopy {
+    align-self: center;
+    padding-left: 16px;
+
+    > p {
+      margin: 0;
+    }
+  }
+}
+
+.passwordInput {
+  width: 100%;
+  margin-top: 16px;
+  font-size: 32px;
+}

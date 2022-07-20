@@ -1,0 +1,109 @@
+@import '../../styles/variables.scss';
+
+.SidebarRight {
+    width: 380px;
+
+    .wrapper {
+        margin-top: 9px;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        min-width: 360px;
+
+        .searchBarPill, .whatsHappeningModule, .whoToFollowModule {
+            background: #EFF3F4;
+        }
+
+        .searchBar {
+            position: fixed;
+            min-width: 360px;
+            min-height: 55px;
+            padding-top: 8px;
+            top: 0;
+            background: white;
+
+            .searchBarPill {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                height: 40px;
+                border-radius: 100px;
+                cursor: pointer;
+    
+                .searchWrapper {
+                    display: flex;
+                    align-items: center;
+    
+                    .searchIcon {
+                        width: 13px;
+                    }
+                    
+                    .searchLabel {
+                        padding-left: 10px;
+                        color: #536471;
+                    }
+                }
+            }
+        }
+
+        .whatsHappeningModule, .whoToFollowModule {
+            padding: 12px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-radius: 12px;
+            color: #0F1419;
+
+            h1 {
+                margin: 0;
+                font-weight: 800;
+            }
+
+            .showMoreLabel {
+                margin: 0;
+                color: #1D9BF0;
+                font-weight: 400;
+            }
+        }
+
+        .whatsHappeningModule {
+            margin-top: 55px;
+            height: 656px;
+
+            .whatsHappeningWrapper {
+                margin: 15px 0 5px -16px;
+                padding: 0px 0px;
+                list-style-type: none;
+                > div {
+                    box-shadow: 0px 0px 0px 10px #EFF3F4 inset;
+                }
+
+                .whatsHappeningItem {
+                    background-color: #EFF3F4;
+                }
+            }
+            
+        }
+
+        .whoToFollowModule {
+            height: 318px;
+
+            .whoToFollowWrapper {
+                margin: 15px 0 5px -16px;
+                padding: 0px 0px;
+                list-style-type: none;
+                line-height: 0px;
+
+                > div {
+                    box-shadow: 0px 0px 0px 10px #EFF3F4 inset;
+                }
+
+                .whoToFollowItem {
+                    background-color: #EFF3F4;
+                }
+            }
+        }
+    }
+}

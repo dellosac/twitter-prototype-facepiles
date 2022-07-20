@@ -1,0 +1,55 @@
+@import "./fonts.scss";
+@import "./variables.scss";
+
+// Global
+html,
+body {
+  // height: 100%;
+  min-height: 101vh;
+  margin: 0;
+  font-family: "Chirp", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-display: block;
+}
+
+#root {
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.transition-wrapper.bones:not(.loaded) {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  background-color: #cdcdcd;
+  box-shadow: 0px 0px 0px 10px white inset;
+  border-radius: 16px;
+
+  background-image: linear-gradient(45deg, #CDCDCD, #CDCDCD, #CDCDCD, #eee, #CDCDCD, #CDCDCD, #CDCDCD);
+  background-size: 400% 100%;
+  background-repeat: no-repeat;
+  animation: loaderGradient 2s linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes loaderGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	// 50% {
+	// 	background-position: 100% 50%;
+	// }
+	100% {
+		background-position: 100% 50%;
+	}
+}

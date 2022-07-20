@@ -1,0 +1,47 @@
+@import "../../styles/variables.scss";
+
+html, body {
+  height: 100%;
+}
+
+.layout {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.contentWrapper {
+  min-width: 982px;
+  display: flex;
+}
+
+.animateLarry {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  background-image: url(./images/larry.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  pointer-events: none;
+  z-index: 99;
+  // background-color: white;
+}
+
+.navigation {
+//  background-color: $background-color;
+  width: 275px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0 12px;
+}
+
+.pages {
+   min-width: 602px;
+}

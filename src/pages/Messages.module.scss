@@ -1,0 +1,54 @@
+@import '../styles/variables.scss';
+
+.messagesPage {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    
+    .messageWrapper {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;   
+        line-height: 0px; 
+        max-width: 380px;
+
+        li {
+            background-color: white;
+        }
+    }
+
+    .messageViewer {
+        min-width: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .messageLockup {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 336px;
+                    
+            .copy1 {
+                margin: 0 0 8px 0;
+                color: #0F1419;
+                font-weight: 800;
+            }
+
+            .copy2 {
+                margin: 0 0 28px 0;
+                color: #536471;
+                font-weight: 400;
+                text-align: left;
+            }
+
+            .newMessageCTA {
+                padding: 16px 32px;
+                background: #1D9BF0;
+                border-radius: 100px;
+                color: white;
+                font-weight: 700;
+            }
+        }
+    }
+}

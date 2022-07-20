@@ -1,0 +1,45 @@
+@import "../../styles/variables.scss";
+
+.TestOptionsList {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 $base-px;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 700px) {
+  .TestOptionsList {
+    flex-direction: row;
+  }
+}
+
+.TestOptionsListItem {
+  margin: 0 6px;
+  text-decoration: none;
+  font-weight: 700;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 16px;
+  color: #40515e;
+  transition: all 150ms ease-in-out;
+  box-shadow: 0 0 0 rgba(101, 119, 134, 0.2),
+    0 0 0 0 rgba(101, 119, 134, 0.15);
+
+  &.active,
+  &.active:hover {
+    background-color: #0f1419;
+    color: white;
+    box-shadow: 0 0 15px rgba(101, 119, 134, 0.2),
+      0 0 3px 1px rgba(101, 119, 134, 0.15);
+  }
+
+  &:hover {
+    color: #0f1419;
+    background-color: #829aab;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(101, 119, 134, 0.2),
+      0 1px 3px 1px rgba(101, 119, 134, 0.25);
+  }
+}

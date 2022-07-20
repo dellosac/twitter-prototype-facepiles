@@ -1,0 +1,131 @@
+@import "../styles/easings.scss";
+
+.profilePage {
+    text-align: left;
+
+    .pageLabel, .pageHeadline, .displayNameLabel, .usernameLabel, .bio {
+        margin: 0;
+    }
+
+    .pageHeader {
+        padding: 0 16px;
+        height: 56px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .pageLabel {
+            padding-left: 32px;
+            .pageHeadline {
+                margin: 0;
+                color: #0F1419;
+                font-weight: 700;
+            }
+
+            .pageSubline {
+                margin: 0;
+                color: #536471;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .pfp {
+        position: absolute;
+        margin: -35px 0 0 17px;
+        z-index: 2;
+        width: 70px;
+    }
+
+    .editProfileBtn {
+        display: block;
+        margin: 7px 16px 0 auto;
+        padding: 7px 16px;
+        width: fit-content;
+        background: white;
+        border: 1px solid #B9CAD3;
+        border-radius: 100px;
+        cursor: pointer;
+
+        color: #0F1419;
+        font-weight: 700;
+
+        transition: background 333ms $easeOutQuint;
+
+        &:hover {
+            background: #EFF3F4;
+            transition: background 666ms $easeOutQuint;
+        }
+    }
+
+    .copyLockup {
+        margin-left: 16px;
+
+        .bio, .metaData, .followerInfo {
+            margin-top: 12px;
+        }
+        
+        .displayNameLabel {
+            margin: 0;
+            color: #0F1419;
+            font-weight: 800;
+        }
+        
+        .usernameLabel {
+            color: #536471;
+            font-weight: 400;
+        }
+        
+        .bio {
+            color: #0F1419;
+            font-weight: 400;
+        }
+        
+        .metaData {
+            display: flex;
+            align-items: center;
+            height: 18px;
+            color: #536471;
+            
+            .locationLabel, .linkLabel, .dateLabel {
+                margin-left: 4px;
+                font-weight: 400;
+            }
+            
+            .linkIcon, .dateIcon {
+                margin-left: 12px;
+            }
+            
+            .linkLabel {
+                color: #1D9BF0;
+                cursor: pointer;
+                
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        
+        .followerInfo {
+            .followingCount, .followerCount {
+                color: #0F1419;
+                font-weight: 700;
+            }
+            
+            .followingLabel, .followerLabel {
+                color: #536471;
+                font-weight: 400;
+            }
+            
+            .followerCount {
+                margin-left: 12px;
+            }
+        }
+    }
+        
+        .tweetsWrapper {
+            padding: 0;
+            list-style-type: none;   
+            line-height: 0px; 
+        }
+    }

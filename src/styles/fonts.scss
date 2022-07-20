@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "Chirp";
+  src: url("./fonts/chirp-regular-web.woff2") format("woff2"),
+    url("./fonts/chirp-regular-web.woff") format("woff");
+  font-weight: 400;
+  font-style: 400;
+}
+
+@font-face {
+  font-family: "Chirp";
+  src: url("./fonts/chirp-medium-web.woff2") format("woff2"),
+    url("./fonts/chirp-medium-web.woff") format("woff");
+  font-weight: 500;
+  font-style: 500;
+}
+
+@font-face {
+  font-family: "Chirp";
+  src: url("./fonts/chirp-bold-web.woff2") format("woff2"),
+    url("./fonts/chirp-bold-web.woff") format("woff");
+  font-weight: 700;
+  font-style: 700;
+}
+
+@font-face {
+  font-family: "Chirp";
+  src: url("./fonts/chirp-heavy-web.woff2") format("woff2"),
+    url("./fonts/chirp-heavy-web.woff") format("woff");
+  font-weight: 800;
+  font-style: 800;
+}
+
+.subtext3 {
+  font-size: 11px;
+  line-height: 12px;
+}
+
+.subtext2 {
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.subtext1 {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+body,
+.body {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.headline2 {
+  font-size: 17px;
+  line-height: 20px;
+}
+
+.headline1 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.title4 {
+  font-size: 23px;
+  line-height: 28px;
+}
+
+.title3 {
+  font-size: 26px;
+  line-height: 32px;
+}
+
+.title2 {
+  font-size: 31px;
+  line-height: 36px;
+}
+
+.title1 {
+  font-size: 34px;
+  line-height: 40px;
+}

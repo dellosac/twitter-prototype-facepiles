@@ -1,0 +1,45 @@
+@import '../styles/variables.scss';
+
+.bookmarkPage {
+
+    .pageHeader {
+        padding: 0 16px;
+        height: 56px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .pageHeaderCopy {
+            text-align: left;
+
+            .pageLabel, .pageSublabel {
+                margin: 0;
+            }
+
+            .pageLabel {
+                color: #0F1419;
+                font-weight: 700;
+            }
+            
+            .pageSublabel {
+                color: #536471;
+                font-weight: 400;
+            }
+        }
+
+        .addCTA {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .bookmarksWrapper {
+        padding: 0;
+        list-style-type: none;    
+        line-height: 0px;
+
+        .bookmarkMenuItem {
+            background-color: white;
+        }
+    }
+}

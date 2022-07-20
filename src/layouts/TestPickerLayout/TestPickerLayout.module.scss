@@ -1,0 +1,44 @@
+@import "../../styles/variables.scss";
+
+.wrapper {
+  background-color: hsla(214, 100%, 26%, 1);
+  background-image: radial-gradient(
+      at 72% 25%,
+      hsla(214, 100%, 26%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 72% 72%, hsla(204, 87%, 52%, 1) 0px, transparent 50%),
+    radial-gradient(at 6% 20%, hsla(182, 70%, 69%, 1) 0px, transparent 50%),
+    radial-gradient(at 96% 10%, hsla(192, 100%, 87%, 1) 0px, transparent 50%);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.title {
+  font-weight: 900;
+  margin-bottom: 32px;
+}
+
+.content_wrapper {
+  width: clamp(400px, 80vw, 800px);
+}
+
+.formInputWrapper {
+  padding: 16px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
