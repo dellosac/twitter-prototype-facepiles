@@ -1,0 +1,67 @@
+.header {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    padding: 6px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 9001;
+}
+
+.headerSections {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 24px;
+}
+
+.cancelBtn {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    color: #0f1419;
+    background: none;
+    border: none;
+    padding: 0;
+    align-self: center;
+}
+
+.draftsBtn {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #1d9bf0;
+}
+
+.tweetBtn {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+    
+    width: auto;
+    height: 32px;
+    
+    /* Base/Blue 500 */
+    
+    background: #1D9BF0;
+    border-radius: 100px;
+    border: none;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}

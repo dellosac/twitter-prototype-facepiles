@@ -2,6 +2,7 @@ import Facepiles from "./Facepiles";
 import MockiOSFooter from "./MockiOSFooter";
 import MockiOSHeader from "./MockiOSHeader";
 import MockTweet from "./MockTweet";
+import ProfileHeader from "./ProfileHeader";
 import StaticItem from "./StaticItem";
 import TestOptionSection from "./TestOptionSection";
 import TestOptionsList from "./TestOptionsList";
@@ -13,6 +14,7 @@ export {
   MockiOSFooter,
   MockiOSHeader,
   MockTweet,
+  ProfileHeader,
   StaticItem,
   TestOptionSection,
   TestOptionsList,
