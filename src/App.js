@@ -5,7 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import { TestPickerPage, LoginPage } from "./pages";
 import { AuthProviderWrapper, useAuth } from "./authprovider";
 
-import { TestPickerLayout, HomeTimelineLayout } from "./layouts";
+import { TestPickerLayout, HomeTimelineLayout, ProfilesLayout } from "./layouts";
 import mockDataProvider from "./dataprovider";
 
 import CONFIG from "./config";
@@ -64,7 +64,7 @@ export default function App() {
             path="/mock/profile"
             element={
               <RequireAuth>
-                <p>Profile Page</p>
+                <ProfilesLayout testOptions={activeTestOptions} />
               </RequireAuth>
             }
           >
