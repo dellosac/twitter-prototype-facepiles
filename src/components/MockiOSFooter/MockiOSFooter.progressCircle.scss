@@ -1,0 +1,79 @@
+:root {
+  --radial-circle-default-value: #1D9BF0;
+  --radial-circle-warning-value: #FFAD1F;
+  --radial-circle-error-value: #E0245E;
+  --radial-circle-font-default-value: #0F1419;
+  --radial-circle-value: rotate(0deg);
+  --radial-circle-color: #1D9BF0;
+  --radial-circle-font-color: #0F1419;
+  --radial-circle-default-scale-value: 1;
+  --radial-circle-warning-scale-value: 1.5;
+  --radial-circle-error-scale-value: 1.65;
+  --radial-circle-default-scale: 1;
+}
+
+.circle_wrap {
+  margin: 0px 0px;
+  width: 20px;
+  height: 20px;
+  background: #D9D9D9;
+  border-radius: 50%;
+  border: 0px solid transparent;
+  transform: scale(var(--radial-circle-default-scale));
+  transition: transform cubic-bezier(0,2,1,0) 300ms;
+}
+
+.circle_wrap .circle .mask,
+.circle_wrap .circle .fill {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle_wrap .circle .mask {
+  clip: rect(0px, 20px, 20px, 10px);
+}
+
+.circle_wrap .inside_circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  line-height: 16px;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 2px;
+  color: var(--radial-circle-font-color);
+  position: absolute;
+  z-index: 100;
+  font-weight: normal;
+  font-size: 8px;
+  transition: color ease-in-out 200ms;
+  letter-spacing: -0.25px;
+}
+
+/* color animation */
+
+/* 3rd progress bar */
+.mask .fill {
+  clip: rect(0px, 10px, 20px, 0px);
+  background-color: var(--radial-circle-color);
+  transition: background-color ease-in-out 200ms;
+}
+
+.mask.full,
+.circle .fill {
+  // animation: fill ease-in-out 3s;
+  transition: transform ease-in-out 200ms;
+  transform: var(--radial-circle-value);
+}
+
+// @keyframes fill{
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(135deg);
+//   }
+// }

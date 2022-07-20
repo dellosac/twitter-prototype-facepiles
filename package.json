@@ -1,7 +1,7 @@
 {
-  "name": "twitter-motion-prototype",
+  "name": "mte-facepile-replies",
   "version": "0.0.1",
-  "description": "A proof of concept for Twitter with motion",
+  "description": "Rapid research test",
   "engines": {
     "node": "16.x"
   },

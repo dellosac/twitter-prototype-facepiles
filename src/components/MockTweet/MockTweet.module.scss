@@ -1,0 +1,94 @@
+@import "../../styles/variables.scss";
+
+.root {
+  padding: 12px 16px;
+  // display: flex;
+  border-bottom: 1px $gray-300 solid;
+}
+
+.avatarIcon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+
+  .headerMeta {
+    display: flex;
+    align-items: flex-start;
+    gap: 2px;
+    padding-bottom: 1px;
+
+    > p,
+    span,
+    img {
+      margin: 0;
+    }
+
+    .headerMetaName {
+      font-weight: bold;
+    }
+
+    .vertifiedIcon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+    }
+
+    .dot {
+      // display: inline-block;
+      color: $gray-700;
+    }
+
+    .headerMetaHandle {
+      color: $gray-700;
+    }
+
+    .headerMetaTimestamp {
+      color: $gray-700;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+
+  &.noFacePiles {
+    padding-left: 60px;
+  }
+
+  .facepilesWrapper {
+    min-width: 48px;
+    margin-right: 12px;
+  }
+
+  .footerIcons {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .footerIcon {
+      display: flex;
+      align-items: center;
+      color: $gray-700;
+      gap: 4px;
+    }
+  }
+}
+
+.copy {
+  padding-bottom: 12px;
+  min-height: 48px;
+}
+
+.article {
+  flex: 1;
+  padding-left: 12px;
+}

@@ -32,37 +32,8 @@
     background-color: rgb(39, 44, 48);
     cursor: pointer;
   }
-
-  &:disabled {
-    opacity: 0.4;
-  }
 }
 
-
-.loadingWrapper {
-  display: flex;
-
-  .loadedCopy {
-    align-self: center;
-    margin-bottom: 32px;
-
-    > p {
-      margin: 0;
-    }
-  }
-
-  .loadingCopy {
-    align-self: center;
-    padding-left: 16px;
-
-    > p {
-      margin: 0;
-    }
-  }
-}
-
-.passwordInput {
+input {
   width: 100%;
-  margin-top: 16px;
-  font-size: 32px;
 }

@@ -1,11 +1,14 @@
+@import "./normalize.scss";
 @import "./fonts.scss";
 @import "./variables.scss";
+
+:root {
+  --window-inner-height: calc(100vh - 1px);
+}
 
 // Global
 html,
 body {
-  // height: 100%;
-  min-height: 101vh;
   margin: 0;
   font-family: "Chirp", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -13,10 +16,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-display: block;
+  box-sizing: border-box;
+  padding-bottom: env(safe-area-inset-bottom);
+
+  /* want to fix the height to the window height */
+  // height: calc(var(--window-inner-height) - 1px);
+
+  /* want to block all overflowing content */
+  // overflow: hidden;
 }
 
-#root {
-  height: 100%;
+#root, main {
+  // height: calc(var(--window-inner-height) - 1px);
+}
+
+button,
+p,
+a,
+textarea,
+input {
+  font-family: "Chirp", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 code {
@@ -33,7 +54,16 @@ code {
   box-shadow: 0px 0px 0px 10px white inset;
   border-radius: 16px;
 
-  background-image: linear-gradient(45deg, #CDCDCD, #CDCDCD, #CDCDCD, #eee, #CDCDCD, #CDCDCD, #CDCDCD);
+  background-image: linear-gradient(
+    45deg,
+    #cdcdcd,
+    #cdcdcd,
+    #cdcdcd,
+    #eee,
+    #cdcdcd,
+    #cdcdcd,
+    #cdcdcd
+  );
   background-size: 400% 100%;
   background-repeat: no-repeat;
   animation: loaderGradient 2s linear;
@@ -43,13 +73,13 @@ code {
 }
 
 @keyframes loaderGradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	// 50% {
-	// 	background-position: 100% 50%;
-	// }
-	100% {
-		background-position: 100% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  // 50% {
+  // 	background-position: 100% 50%;
+  // }
+  100% {
+    background-position: 100% 50%;
+  }
 }

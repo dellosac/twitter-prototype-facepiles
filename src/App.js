@@ -2,60 +2,36 @@ import * as React from "react";
 import { Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
-import {
-  HomePage,
-  BookmarksPage,
-  ExplorePage,
-  ListPage,
-  MessagePage,
-  NotificationsPage,
-  ProfilePage,
-  TestPickerPage,
-  LoginPage,
-} from "./pages";
+import { TestPickerPage, LoginPage } from "./pages";
 import { AuthProviderWrapper, useAuth } from "./authprovider";
 
-import { TestPickerLayout, TwitterWebLayout } from "./layouts";
-import CONFIG from "./config";
-import PageLoaderConfigs from "./pageloaders";
+import { TestPickerLayout, HomeTimelineLayout } from "./layouts";
+import mockDataProvider from "./dataprovider";
 
-const DEFAULT_STATE = {
-  lottieOption: CONFIG.LOTTIE_OPTIONS.Ease,
-  pageLoaderOption: CONFIG.PAGE_LOADER_OPTIONS.Position,
-};
+import CONFIG from "./config";
 
 export default function App() {
+  const [activeTestOptions, setActiveTestOptions] =
+    React.useState(CONFIG.TEST_PARAMETERS);
+
+  // events
+  const onTestOptionsChanged = (updatedOption) => {
+    const clonedActiveTestOptions = Object.assign({}, activeTestOptions);
+    const updatedOptionKey = updatedOption.testKey;
+    clonedActiveTestOptions[updatedOptionKey] = updatedOption;
+    mockDataProvider.reset();
+
+    setActiveTestOptions(clonedActiveTestOptions);
+  };
+
   const location = useLocation();
-
-  const [activeLottieOption, setLottieOption] = React.useState(
-    DEFAULT_STATE.lottieOption
-  );
-  const [activePageLoaderOption, setPageLoaderOption] = React.useState(
-    DEFAULT_STATE.pageLoaderOption
-  );
-
-  const onLottieSelectCallback = (option) => {
-    setLottieOption(option);
-  };
-
-  const onPageLoaderSelectCallback = (option) => {
-    sessionStorage.setItem("show_ghosts", (option === CONFIG.PAGE_LOADER_OPTIONS.Ghost) ? 1 : 0);
-
-    setPageLoaderOption(option);
-  };
-
-  const currentPageLoaderConfig = PageLoaderConfigs[activePageLoaderOption];
-
-  const showLarryEntrance = parseInt(sessionStorage.getItem("show_larry"));
-  if (showLarryEntrance) {
-    window.showLarryEntrance = true;
-    sessionStorage.setItem("show_larry", 0);
-  } else {
-    window.showLarryEntrance = false;
-  }
-
   const nextPath = location.pathname;
 
+  console.log("nextPath", nextPath);
+
+  if (nextPath === "/test/picker") {
+    mockDataProvider.reset();
+  }
 
   return (
     <AuthProviderWrapper>
@@ -67,10 +43,8 @@ export default function App() {
               path="picker"
               element={
                 <TestPickerPage
-                  activeLottieOption={activeLottieOption}
-                  activePageLoaderOption={activePageLoaderOption}
-                  onLottieSelectCallback={onLottieSelectCallback}
-                  onPageLoaderSelectCallback={onPageLoaderSelectCallback}
+                  activeTestOptions={activeTestOptions}
+                  onTestOptionsChanged={onTestOptionsChanged}
                 />
               }
             />
@@ -80,83 +54,40 @@ export default function App() {
             path="/"
             element={
               <RequireAuth>
-                <TwitterWebLayout
-                  showLarryEntrance={showLarryEntrance}
-                  pageLoaderConfig={currentPageLoaderConfig}
-                  activeLottieOption={activeLottieOption}
-                  currentPath={nextPath}
-                />
+                <HomeTimelineLayout testOptions={activeTestOptions} />
               </RequireAuth>
             }
           >
-            <Route
-              index
-              element={
-                <HomePage
-                  pageLoaderConfig={currentPageLoaderConfig}
-                  slug={"/"}
-                />
-              }
-            />
-
-            <Route
-              path="explore"
-              element={
-                <ExplorePage
-                  pageLoaderConfig={currentPageLoaderConfig}
-                  slug={"/explore"}
-                />
-              }
-            />
-            <Route
-              path="bookmarks"
-              element={
-                <BookmarksPage
-                  pageLoaderConfig={currentPageLoaderConfig}
-                  slug={"/bookmarks"}
-                />
-              }
-            />
-            <Route
-              path="lists"
-              element={
-                <ListPage
-                  pageLoaderConfig={currentPageLoaderConfig}
-                  slug={"/lists"}
-                />
-              }
-            />
-            <Route
-              path="messages"
-              element={
-                <MessagePage
-                  pageLoaderConfig={currentPageLoaderConfig}
-                  slug={"/messages"}
-                />
-              }
-            />
-            <Route
-              path="notifications"
-              element={
-                <NotificationsPage
-                  pageLoaderConfig={currentPageLoaderConfig}
-                  slug={"/notifications"}
-                />
-              }
-            />
-            <Route
-              path="profile"
-              element={
-                <ProfilePage
-                  pageLoaderConfig={currentPageLoaderConfig}
-                  slug={"/profile"}
-                />
-              }
-            />
-
-            {/* Using path="*"" means "match anything", so this route
-                acts like a catch-all for URLs that we don't have explicit
-                routes for. */}
+            <Route path="*" element={<NoMatch />} />
+          </Route>
+          <Route
+            path="/mock/profile"
+            element={
+              <RequireAuth>
+                <p>Profile Page</p>
+              </RequireAuth>
+            }
+          >
+            <Route path="*" element={<NoMatch />} />
+          </Route>
+          <Route
+            path="/mock/tweet/detail"
+            element={
+              <RequireAuth>
+                <p>Tweet Detail</p>
+              </RequireAuth>
+            }
+          >
+            <Route path="*" element={<NoMatch />} />
+          </Route>
+          <Route
+            path="/mock/tweet/composer"
+            element={
+              <RequireAuth>
+                <p>Tweet Composer</p>
+              </RequireAuth>
+            }
+          >
             <Route path="*" element={<NoMatch />} />
           </Route>
         </Routes>

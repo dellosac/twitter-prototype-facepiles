@@ -1,0 +1,195 @@
+[
+  {
+    "id": "root-tweet-4",
+    "likes": 0,
+    "timestamp": "2hr",
+    "retweets": 0,
+    "handle": "@h_wang84",
+    "copy": "Griffith Park is the best place to take a hike and see the amazing views of Los Angeles!",
+    "socialretweets": [],
+    "baseFakeReplies": 0,
+    "replies": [
+      {
+        "id": "reply-4-root-tweet-1",
+        "show": false,
+        "unread": true,
+        "handle": "@chrissyteigen",
+        "copy": "I can't wait!!"
+      },
+      {
+        "id": "reply-4-root-tweet-2",
+        "show": false,
+        "unread": true,
+        "handle": "@kay_tee_oh",
+        "copy": "reply 2"
+      },
+      {
+        "id": "reply-4-root-tweet-3",
+        "show": false,
+        "unread": true,
+        "handle": "@machodocomida",
+        "copy": "reply 3"
+      },
+      {
+        "id": "reply-4-root-tweet-4",
+        "show": false,
+        "unread": true,
+        "handle": "@h_wang84",
+        "copy": "reply 3"
+      }
+    ]
+  },
+  {
+    "id": "root-tweet-1",
+    "likes": "13.9K",
+    "timestamp": "1hr",
+    "retweets": 914,
+    "handle": "@Rihanna",
+    "copy": "this soft-matte formula is everything y'all - it includes hyaluronic acid & vitamins C & E for comfortable, lasting wear. the earth-conscious packaging is refillable and ultra-luxe….coming feb 4!!",
+    "socialretweets": [],
+    "baseFakeReplies": 321,
+    "replies": [
+      {
+        "id": "reply-root-tweet-1",
+        "show": true,
+        "unread": true,
+        "handle": "@chrissyteigen",
+        "copy": "@Rihanna this looks amazing! can't wait to try it!"
+      },
+      {
+        "id": "reply-root-tweet-2",
+        "show": true,
+        "unread": true,
+        "handle": "@kay_tee_oh",
+        "copy": "omg can't wait!"
+      },
+      {
+        "id": "reply-root-tweet-3",
+        "show": true,
+        "unread": true,
+        "handle": "@machodocomida",
+        "copy": "I need this in my life!"
+      },
+      {
+        "id": "reply-root-tweet-4",
+        "show": false,
+        "unread": true,
+        "handle": "@h_wang84",
+        "copy": "Cannot wait to try this!!"
+      },
+      {
+        "id": "reply-root-tweet-5",
+        "show": false,
+        "unread": true,
+        "handle": "@Rihanna",
+        "copy": "I'm so excited for this!"
+      },
+      {
+        "id": "reply-root-tweet-6",
+        "show": false,
+        "unread": true,
+        "handle": "@machodocomida",
+        "copy": "Can't wait to get my hands on this!"
+      },
+      {
+        "id": "reply-root-tweet-7",
+        "show": false,
+        "unread": true,
+        "handle": "@kay_tee_oh",
+        "copy": "This looks amazing, can't wait to try it!"
+      },
+      {
+        "id": "reply-root-tweet-8",
+        "show": false,
+        "unread": true,
+        "handle": "@h_wang84",
+        "copy": "This soft-matte formula looks incredible! I can't wait to try it!"
+      },
+      {
+        "id": "reply-root-tweet-9",
+        "show": false,
+        "unread": true,
+        "handle": "@chrissyteigen",
+        "copy": "I'm so excited for this soft-matte formula! It looks amazing!"
+      },
+      {
+        "id": "reply-root-tweet-10",
+        "show": false,
+        "unread": true,
+        "handle": "@Rihanna",
+        "copy": "This looks like an amazing product! Can't wait to try it!"
+      }
+    ]
+  },
+  {
+    "id": "root-tweet-2",
+    "likes": 1,
+    "timestamp": "1hr",
+    "retweets": 2,
+    "handle": "@machodocomida",
+    "copy": "How does everyone feel about pineapple pizza?",
+    "socialretweets": ["@Rihanna"],
+    "baseFakeReplies": 0,
+    "replies": [
+      {
+        "id": "reply-2-root-tweet-1",
+        "show": true,
+        "unread": false,
+        "handle": "@chrissyteigen",
+        "copy": "I absolutely love pineapple pizza! It's one of my favorite foods!"
+      },
+      {
+        "id": "reply-2-root-tweet-2",
+        "show": true,
+        "unread": false,
+        "handle": "@kay_tee_oh",
+        "copy": "I don't really like pineapple pizza. I think it's gross."
+      }
+    ]
+  },
+  {
+    "id": "root-tweet-5",
+    "likes": 1,
+    "timestamp": "4hr",
+    "retweets": 0,
+    "handle": "@kay_tee_oh",
+    "copy": "Facebook is down! AGAIN!",
+    "socialretweets": [],
+    "baseFakeReplies": 0,
+    "replies": [
+      {
+        "id": "root-tweet-5-root-tweet-1",
+        "show": true,
+        "unread": true,
+        "handle": "@chrissyteigen",
+        "copy": "Well, at least you're not alone in your misery! #FacebookDown"
+      },
+      {
+        "id": "root-tweet-5-root-tweet-2",
+        "show": false,
+        "unread": false,
+        "handle": "@h_wang84",
+        "copy": "Oh no, how will I ever survive?! #FacebookDown"
+      }
+    ]
+  },
+  {
+    "id": "root-tweet-3",
+    "likes": 1,
+    "timestamp": "4hr",
+    "retweets": 0,
+    "handle": "@chrissyteigen",
+    "copy": "I just saw the best movie ever! It was called \"The Room\"",
+    "socialretweets": [],
+    "baseFakeReplies": 0,
+    "replies": [
+      {
+        "id": "reply-3-root-tweet-1",
+        "show": true,
+        "unread": true,
+        "handle": "@h_wang84",
+        "copy": "I'm so glad you loved it! I've been a big fan of Tommy Wiseau's work for years."
+      }
+    ]
+  }
+]

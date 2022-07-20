@@ -1,0 +1,32 @@
+[
+  {
+    "avatar": "rihanna",
+    "name": "Rihanna",
+    "handle": "@Rihanna",
+    "verified": true
+  },
+  {
+    "avatar": "chrissyteigen",
+    "name": "chrissy teigen",
+    "handle": "@chrissyteigen",
+    "verified": false
+  },
+  {
+    "avatar": "kay_tee_oh",
+    "name": "Katie O",
+    "handle": "@kay_tee_oh",
+    "verified": false
+  },
+  {
+    "avatar": "machodocomida",
+    "name": "Silvie",
+    "handle": "@machodocomida",
+    "verified": true
+  },
+  {
+    "avatar": "h_wang84",
+    "name": "Harold",
+    "handle": "@h_wang84",
+    "verified": true
+  }
+]

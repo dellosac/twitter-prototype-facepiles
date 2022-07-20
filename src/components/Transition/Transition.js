@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import CONFIG from "../../config/ComponentAnimations";
 
 const Transition = ({
   animationConfiguration,
@@ -15,10 +14,6 @@ const Transition = ({
 }) => {
   let a = JSON.parse(JSON.stringify(animationConfiguration));
   let showGhosts = parseInt(sessionStorage.getItem("show_ghosts"));
-
-  if (component in CONFIG)
-    for (let p in CONFIG[component])
-      if (a.initial.hasOwnProperty(p)) a.initial[p] = a.initial[p] == 0 ? 1 : 0;
 
   if (window.showLarryEntrance) entranceDelay += 1.3;
 

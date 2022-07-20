@@ -1,0 +1,87 @@
+@import "../../styles/variables.scss";
+
+$device-max-width: 476px;
+
+.main {
+  // min-height: calc(100vh);
+}
+
+.timelineList {
+  margin: 0;
+  padding: 44px 0 55px;
+  list-style: none;
+  min-height: 90vh;
+
+  > .timelineListItem {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.timelineHeader {
+  background-color: white;
+  position: fixed;
+  z-index: 99;
+  padding: 7px 16px;
+  top: 0;
+  left: 0;
+  width: calc(100% - 32px);
+  height: calc(44px - 14px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .avatarHeader {
+    width: 24px;
+    height: 24px;
+  }
+
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .timelineSwitcher {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.composeButton {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: $blue-500;
+  border-radius: 100%;
+  overflow: hidden;
+  bottom: 60px;
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  box-shadow: 0px 20px 34px -16px rgba(0, 0, 0, 0.08),
+    0px 3px 4px -4px rgba(0, 0, 0, 0.06), 0px 6px 16px -8px rgba(0, 0, 0, 0.12);
+}
+
+.timelineFooter {
+  background-color: white;
+  position: fixed;
+  
+  bottom: 0px;
+  left: 0px;
+  width: calc(100% - 32px);
+  height: 44px;
+  border-top: 1px $gray-300 solid;
+  padding: 12px 16px 0;
+
+  .timelineFooterList {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    max-width: 264px;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

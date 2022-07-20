@@ -1,15 +1,7 @@
-import LOTTIE_OPTIONS from "./LottieOptions";
-import PAGE_LOADER_OPTIONS from "./PageLoaderOptions";
-import NAV_CONFIG from "./NavConfig";
-import COMPONENT_ANIMATIONS from "./ComponentAnimations";
-import StaticIconSettings from "./StaticIconSettings";
+import TEST_PARAMETERS from "./testParameters.json";
 
 const CONFIG = {
-  LOTTIE_OPTIONS,
-  PAGE_LOADER_OPTIONS,
-  NAV_CONFIG,
-  COMPONENT_ANIMATIONS,
-  StaticIconSettings
+    TEST_PARAMETERS
 };
 
 export default CONFIG;

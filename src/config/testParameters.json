@@ -1,0 +1,34 @@
+{
+  "FACEPILES": {
+    "name": "Parameter 1",
+    "description": "Facepiles On/Off",
+    "letterMasks": ["a", "b"],
+    "activeOptionIndex": 0,
+    "options": [
+      {
+        "name": "Facepiles",
+        "value": "facepiles"
+      },
+      {
+        "name": "Control",
+        "value": "control"
+      }
+    ]
+  },
+  "FACEPILE_DIRECTION": {
+    "name": "Parameter 2",
+    "description": "Facepile Direction",
+    "letterMasks": ["y", "z"],
+    "activeOptionIndex": 0,
+    "options": [
+      {
+        "name": "Left-to-Right",
+        "value": "lefttoright"
+      },
+      {
+        "name": "Right-to-Left",
+        "value": "righttoleft"
+      }
+    ]
+  }
+}

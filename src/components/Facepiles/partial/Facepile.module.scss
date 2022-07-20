@@ -1,0 +1,50 @@
+@import "../../../styles/variables.scss";
+
+.root {
+  position: relative;
+}
+
+.avatarIconWrapper {
+    width: 16px;
+    height: 16px;
+    border: white 1px solid;
+    border-radius: 100%;
+    background-color: grey;
+}
+
+.avatarIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.unreadNotification {
+  width: 6px;
+  height: 6px;
+  background-color: $red-500;
+  position: absolute;
+  border-radius: 100%;
+  top: 0;
+  right: -1px;
+
+  animation: notificationScale 300ms ease-in-out;
+}
+
+@keyframes notificationScale {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes exitFacePile {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

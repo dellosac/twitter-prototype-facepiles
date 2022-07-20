@@ -1,9 +1,6 @@
 import { useAuth } from "../authprovider";
-import { useEffect, useState, Fragment } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-import { Spinner } from "../components";
-import { IMAGE_PRELOADER } from "../utils";
 import styles from "./LoginPage.module.scss";
 import React from "react";
 
@@ -11,19 +8,6 @@ function LoginPage() {
   let navigate = useNavigate();
   let location = useLocation();
   let auth = useAuth();
-
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-
-  useEffect(() => {
-    async function fetchImages() {
-      const imagesLoaded = await IMAGE_PRELOADER.loadImages();
-      if (imagesLoaded) {
-        console.log("all images loaded effect");
-        setImagesLoaded(true);
-      }
-    }
-    fetchImages();
-  });
 
   let from = location.state?.from?.pathname || "/";
 
@@ -77,37 +61,13 @@ function LoginPage() {
       ) : (
         <form onSubmit={handleSubmit}>
           <section className={styles.contentContainer}>
-            {!imagesLoaded ? (
-              <div className={styles.loadingWrapper}>
-                <Spinner />
-                <div className={styles.loadingCopy}>
-                  <p className="title3">Loading Prototype</p>
-                  <p className="subtext1">Please wait</p>
-                </div>
-              </div>
-            ) : (
-              <Fragment>
-                <div className={styles.loadingWrapper}>
-                  <div className={styles.loadedCopy}>
-                    <p className="title3">Prototype Ready!</p>
-  
-                  </div>
-                </div>
-                <label className={`title4 ${styles.label}`}>
-                  Enter password:<br /> <input className={styles.passwordInput} name="password" type="password" />
-                </label>
-              </Fragment>
-            )}
+            <label className={`title4 ${styles.label}`}>
+              password: <input name="password" type="password" />
+            </label>
           </section>
-          {imagesLoaded && (
-            <button
-              className={styles.submitLink}
-              type="submit"
-              disabled={!imagesLoaded}
-            >
-              Login
-            </button>
-          )}
+          <button className={styles.submitLink} type="submit">
+            Login
+          </button>
         </form>
       )}
     </div>

@@ -1,15 +1,14 @@
 import styles from "./TestOptionsList.module.scss";
 
-const TestOptionsList = ({ actionOption, options, onOptionSelectCallback, letterMasks }) => {
+const TestOptionsList = ({ activeOptionIndex, options, onOptionSelectCallback, letterMasks }) => {
   return (
     <ul className={styles.TestOptionsList}>
       {options.map((option, index) => {
-        const isActive = actionOption === option;
+        const isActive = index === activeOptionIndex;
         const onClick = (e) => {
           e.preventDefault();
-          onOptionSelectCallback(option);
+          onOptionSelectCallback(index);
         };
-        const firstLetter = option.split('')[0];
 
         return (
           <li

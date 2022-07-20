@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 @font-face {
   font-family: "Chirp";
   src: url("./fonts/chirp-regular-web.woff2") format("woff2"),
@@ -46,9 +48,11 @@
 }
 
 body,
-.body {
+.body,
+p {
   font-size: 15px;
   line-height: 20px;
+  color: $base-black;
 }
 
 .headline2 {
@@ -80,3 +84,4 @@ body,
   font-size: 34px;
   line-height: 40px;
 }
+

@@ -1,6 +1,15 @@
-$primary-color: #1D9BF0;
+$base-px: 16px;
+
+// Colors
+
+$base-black: #0F1419;
+$blue-500: #1D9BF0;
+$gray-300: #B9CAD3;
+$gray-700: #536471;
+$red-500: #F4212E;
+
+// Color Slots
+$primary-color: $blue-500;
 $secondary-color: #005AC2;
 
 $background-color: #fff;
-
-$base-px: 16px;

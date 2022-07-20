@@ -5,7 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/App.scss";
 
+import { IMAGE_PRELOADER } from "./utils";
+
 sessionStorage.setItem("show_ghosts", 0);
+IMAGE_PRELOADER.loadImages();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
