@@ -1,0 +1,124 @@
+@import "../../styles/variables.scss";
+
+.tweetDetail {
+  padding: 44px 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: white;
+
+  padding: 10px 16px;
+  width: calc(100% - 32px);
+  height: calc(44px - 20px);
+
+  .backBtn {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+  }
+
+  .headerTitle {
+    font-weight: bold;
+  }
+
+  .mockArrow {
+    opacity: 0;
+  }
+}
+
+.avatarIcon {
+  display: block;
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.accountMeta {
+  display: flex;
+}
+
+.headerMeta {
+  display: flex;
+  padding: 0 12px;
+  gap: 6px;
+
+  > p,
+  span,
+  img {
+    margin: 0;
+  }
+
+  .headerMetaName {
+    font-weight: bold;
+  }
+
+  .vertifiedIcon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+  }
+
+  .dot {
+    // display: inline-block;
+    color: $gray-700;
+  }
+
+  .headerMetaHandle {
+    color: $gray-700;
+  }
+}
+
+.copyArea {
+    padding-top: 24px;
+}
+
+.timestampFooter {
+    color: $gray-700;
+}
+
+
+.footer {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    border-top: 1px $gray-300 solid;
+
+    &.noFacePiles {
+      padding-left: 60px;
+    }
+  
+    .facepilesWrapper {
+      min-width: 48px;
+      margin-right: 12px;
+    }
+  
+    .footerIcons {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      .footerIcon {
+        display: flex;
+        align-items: center;
+        color: $gray-700;
+        gap: 4px;
+        min-height: 18px;
+      }
+    }
+  }
+  
+
+.footerIconWrapper {
+    border-bottom: 1px $gray-300 solid;
+}

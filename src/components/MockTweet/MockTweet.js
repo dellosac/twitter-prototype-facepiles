@@ -6,6 +6,7 @@ import { Facepiles } from "../../components";
 import { useNavigate } from "react-router-dom";
 
 const MockTweet = ({
+  id,
   likes,
   retweets,
   copy,
@@ -24,19 +25,19 @@ const MockTweet = ({
   // Events
   const onRootClick = (e) => {
     e.preventDefault();
-    navigate("/mock/tweet/detail");
+    navigate(`/mock/tweet/detail/${id}`);
   }
 
   const onAvatarClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    navigate("/mock/profile");
+    navigate(`/mock/profile/${handle}`);
   }
 
   const onHeaderMetaClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    navigate("/mock/profile");
+    navigate(`/mock/profile/${handle}`);
   }
 
   const onReplyIconClick = (e) => {

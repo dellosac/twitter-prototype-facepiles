@@ -47,7 +47,6 @@ const Facepiles = ({ replies, direction }) => {
 
     let clonedFacepiles = [...facepiles, nextItem];
     if (clonedFacepiles.length >= 4) {
-      console.log("remove");
       clonedFacepiles.shift();
     }
     setFacepiles(clonedFacepiles);

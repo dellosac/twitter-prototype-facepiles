@@ -1,45 +1,5 @@
 [
   {
-    "id": "root-tweet-4",
-    "likes": 0,
-    "timestamp": "2hr",
-    "retweets": 0,
-    "handle": "@h_wang84",
-    "copy": "Griffith Park is the best place to take a hike and see the amazing views of Los Angeles!",
-    "socialretweets": [],
-    "baseFakeReplies": 0,
-    "replies": [
-      {
-        "id": "reply-4-root-tweet-1",
-        "show": false,
-        "unread": true,
-        "handle": "@chrissyteigen",
-        "copy": "I can't wait!!"
-      },
-      {
-        "id": "reply-4-root-tweet-2",
-        "show": false,
-        "unread": true,
-        "handle": "@kay_tee_oh",
-        "copy": "reply 2"
-      },
-      {
-        "id": "reply-4-root-tweet-3",
-        "show": false,
-        "unread": true,
-        "handle": "@machodocomida",
-        "copy": "reply 3"
-      },
-      {
-        "id": "reply-4-root-tweet-4",
-        "show": false,
-        "unread": true,
-        "handle": "@h_wang84",
-        "copy": "reply 3"
-      }
-    ]
-  },
-  {
     "id": "root-tweet-1",
     "likes": "13.9K",
     "timestamp": "1hr",
@@ -118,6 +78,46 @@
         "unread": true,
         "handle": "@Rihanna",
         "copy": "This looks like an amazing product! Can't wait to try it!"
+      }
+    ]
+  },
+  {
+    "id": "root-tweet-4",
+    "likes": 0,
+    "timestamp": "2hr",
+    "retweets": 0,
+    "handle": "@h_wang84",
+    "copy": "Griffith Park is the best place to take a hike and see the amazing views of Los Angeles!",
+    "socialretweets": [],
+    "baseFakeReplies": 0,
+    "replies": [
+      {
+        "id": "reply-4-root-tweet-1",
+        "show": false,
+        "unread": true,
+        "handle": "@chrissyteigen",
+        "copy": "I can't wait!!"
+      },
+      {
+        "id": "reply-4-root-tweet-2",
+        "show": false,
+        "unread": true,
+        "handle": "@kay_tee_oh",
+        "copy": "reply 2"
+      },
+      {
+        "id": "reply-4-root-tweet-3",
+        "show": false,
+        "unread": true,
+        "handle": "@machodocomida",
+        "copy": "reply 3"
+      },
+      {
+        "id": "reply-4-root-tweet-4",
+        "show": false,
+        "unread": true,
+        "handle": "@h_wang84",
+        "copy": "reply 3"
       }
     ]
   },

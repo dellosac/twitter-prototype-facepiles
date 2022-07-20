@@ -3,8 +3,6 @@ import { StaticItem } from "../../../components";
 import { motion, Reorder } from "framer-motion";
 
 const Facepile = ({ facepile, avatarImage, index, total, direction }) => {
-  console.log("facepile direction", direction);
-
   return (
     <Reorder.Item
       value={facepile.id}

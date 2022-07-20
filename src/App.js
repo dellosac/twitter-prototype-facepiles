@@ -5,7 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import { TestPickerPage, LoginPage } from "./pages";
 import { AuthProviderWrapper, useAuth } from "./authprovider";
 
-import { TestPickerLayout, HomeTimelineLayout } from "./layouts";
+import { TestPickerLayout, HomeTimelineLayout, TweetDetailLayout } from "./layouts";
 import mockDataProvider from "./dataprovider";
 
 import CONFIG from "./config";
@@ -70,10 +70,10 @@ export default function App() {
             <Route path="*" element={<NoMatch />} />
           </Route>
           <Route
-            path="/mock/tweet/detail"
+            path="/mock/tweet/detail/:tweetId"
             element={
               <RequireAuth>
-                <p>Tweet Detail</p>
+                <TweetDetailLayout />
               </RequireAuth>
             }
           >

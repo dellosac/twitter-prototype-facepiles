@@ -1,5 +1,11 @@
+import HomeTimelineLayout from "./HomeTimelineLayout";
 import TestPickerLayout from "./TestPickerLayout";
 import TweetComposerLayout from "./TweetComposerLayout";
-import HomeTimelineLayout from "./HomeTimelineLayout";
+import TweetDetailLayout from "./TweetDetailLayout";
 
-export { HomeTimelineLayout, TestPickerLayout, TweetComposerLayout };
+export {
+  HomeTimelineLayout,
+  TestPickerLayout,
+  TweetComposerLayout,
+  TweetDetailLayout,
+};

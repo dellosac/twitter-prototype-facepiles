@@ -18,7 +18,9 @@ class MockDataProviderSingleton {
     if (Math.random() >= 0.3) {
       const randomTweetIndex = Math.floor(Math.random() * (this._timeline.length))
       let randomTweetReply = this._timeline[randomTweetIndex].replies.find(reply => !reply.show);
-      randomTweetReply.show = true;
+      if(!!randomTweetReply) {
+        randomTweetReply.show = true;
+      }
       // this._timeline.forEach(tweet => {
       //   let reply = tweet.replies.find(reply => !reply.show);
       //   reply.show = true;

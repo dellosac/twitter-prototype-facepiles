@@ -22,7 +22,7 @@ const HomeTimelineLayout = ({ testOptions }) => {
     return () => {
       clearInterval(interval);
     };
-  }, [timeline]);
+  }, [timeline, mockDataProvider]);
 
   return (
     <main className={styles.main}>
