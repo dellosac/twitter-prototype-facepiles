@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { MockTweet, StaticItem } from "../../components";
 import styles from "./HomeTimelineLayout.module.scss";
@@ -27,15 +28,19 @@ const HomeTimelineLayout = ({ testOptions }) => {
   return (
     <main className={styles.main}>
       <header className={styles.timelineHeader}>
-        <StaticItem
-          className={styles.avatarHeader}
-          src="/images/accounts/UserAvatar"
-        />
-        <img
-          className={styles.logo}
-          src="/images/icons/Twitter.svg"
-          alt="Twitter logo"
-        />
+        <Link to="/test/picker">
+          <StaticItem
+            className={styles.avatarHeader}
+            src="/images/accounts/UserAvatar"
+          />
+        </Link>
+        <Link to="/test/picker">
+          <img
+            className={styles.logo}
+            src="/images/icons/Twitter.svg"
+            alt="Twitter logo"
+          />
+        </Link>
         <img
           className={styles.timelineSwitcher}
           src="/images/icons/Timeline.svg"
