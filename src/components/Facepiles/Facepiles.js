@@ -63,7 +63,7 @@ const Facepiles = ({ replies, direction }) => {
           : styles.directionrighttoleft
       }`}
       values={replies}
-      onClick={facePilesOnClick}
+      // onClick={facePilesOnClick}
       style={{
         transform: `translateX(${21 - 5 * (facepiles.length - 1)}px)`,
       }}

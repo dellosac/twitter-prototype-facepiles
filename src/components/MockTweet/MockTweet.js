@@ -43,7 +43,7 @@ const MockTweet = ({
   const onReplyIconClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    navigate("/mock/tweet/composer");
+    navigate(`/mock/tweet/composer/${handle}`);
   }
 
   const onRetweetClick = (e) => {

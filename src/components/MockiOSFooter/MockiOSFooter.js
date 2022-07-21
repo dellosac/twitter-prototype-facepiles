@@ -108,11 +108,10 @@ const MockiOSFooter = ({
     }
   };
 
-  const characterTrigger =
-    CONFIG.CHARACTER_COUNT_TRIGGERS_MAP[activeCharacterTriggerCount];
+  const characterTrigger = activeCharacterTriggerCount;
 
   const showToolTip =
-    activeTriggerUX === CONFIG.TRIGGER_UX.Tooltip &&
+    activeTriggerUX != "Accelerator" &&
     activeTweetInThread.length >= characterTrigger &&
     !tooltipWasDismissed;
 
@@ -143,11 +142,11 @@ const MockiOSFooter = ({
       )}
 
       <div className={styles.wrapper_reply}>
-        <StaticItem src="./images/footer/globe" className={styles.globe} />
+        <StaticItem src="/images/footer/globe" className={styles.globe} />
         <div className={styles.reply_copy}>Everyone can reply</div>
       </div>
       <div className={styles.wrapper_actions}>
-        <StaticItem src="./images/footer/Icons" className={styles.icons} />
+        <StaticItem src="/images/footer/Icons" className={styles.icons} />
         <div className={styles.wrapper_circle_plus}>
           <div className={styles.wrapper_circle}>
             <div className="circle_wrap">
@@ -169,7 +168,7 @@ const MockiOSFooter = ({
           <div className={styles.horizontal_line}></div>
           <div className={styles.wrapper_plus} onClick={onPlusClick}>
             <StaticItem
-              src="./images/footer/plus"
+              src="/images/footer/plus"
               className={`${isAddToThreadActive ? styles.isActive : null} ${
                 styles.plus
               }`}

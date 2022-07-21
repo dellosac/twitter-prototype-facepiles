@@ -48,9 +48,8 @@ const TweetComposerLayout = ({
   }, [isKeyboardVisible]);
 
   const useAcceleratePrompts =
-    activeTriggerUX === CONFIG.TRIGGER_UX.Accelerator;
-  const characterTrigger =
-    CONFIG.CHARACTER_COUNT_TRIGGERS_MAP[activeCharacterTriggerCount];
+    activeTriggerUX === "Accelerator";
+  const characterTrigger = activeCharacterTriggerCount;
 
   // Events
   const onTweetThreadEdit = (tweetIndex, tweetNewValue) => {

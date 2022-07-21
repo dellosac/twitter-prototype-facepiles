@@ -5,7 +5,7 @@ const MockiOSHeader = (props) => {
   return (
     <header className={styles.header}>
       <div className={styles.headerSections}>
-        <Link className={styles.submitLink} to="/test/picker">
+        <Link className={styles.submitLink} to="/">
           <button className={styles.cancelBtn}>Cancel</button>
         </Link>
       </div>

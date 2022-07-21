@@ -1,8 +1,10 @@
 import { useState, useRef, useLayoutEffect } from "react";
 import { motion } from "framer-motion";
 import { StaticItem } from "../../components";
+import { useParams } from "react-router-dom";
 
 import styles from "./ThreadComposer.module.scss";
+import mockDataProvider from "../../dataprovider";
 const MIN_TEXTAREA_HEIGHT = 52;
 const ANIMATION_CONFIG = {
   initial: { opacity: 0, translateY: 10 },
@@ -22,6 +24,9 @@ const TweetComposer = ({
 }) => {
   const tweetTextRef = useRef(null);
   const [tweetHeight, setTweetHeight] = useState(MIN_TEXTAREA_HEIGHT);
+  let { profileId } = useParams();
+
+  mockDataProvider.reset();
 
   // events
   const onCancelTweetClick = (event) => {
@@ -30,7 +35,7 @@ const TweetComposer = ({
       console.log("onClickRemoveTweet", onClickRemoveTweet);
       onClickRemoveTweet();
     }
-  }
+  };
 
   const onTweetChange = (event) =>
     onTweetThreadEdit(threadIndex, event.target.value);
@@ -89,37 +94,39 @@ const TweetComposer = ({
           className={`${styles.avatar} ${
             tweetText.length || threadIndex <= 0 ? styles.avatarThreaded : null
           }`}
-          src={"./images/thread-composer/UserAvatar"}
+          src={"/images/thread-composer/UserAvatar"}
         />
-        <div className={styles.threadLine} style={
-          {
-            height: !lastTweet ? `${tweetHeight - 15}px` : "2px"
-          }
-        }></div>
+        <div
+          className={styles.threadLine}
+          style={{
+            height: !lastTweet ? `${tweetHeight - 15}px` : "2px",
+          }}
+        ></div>
       </div>
-      <textarea
-        className={styles.tweetInput}
-        onChange={onTweetChange}
-        ref={tweetTextRef}
-        style={{
-          minHeight: MIN_TEXTAREA_HEIGHT,
-          resize: "none",
-        }}
-        onFocus={onTextAreaFocus}
-        value={tweetText}
-        placeholder={
-          threadIndex < 1 ? "What's happening?" : "Add another Tweet"
-        }
-      />
-      <div onClick={onCancelTweetClick} >
-        {
-          !onlyTweet && (
-            <StaticItem
-              className={isActive ? styles.cancel : styles.hideCancel}
-              src={"./images/thread-composer/x"}
-            />
-          )
-        }
+      <section className={styles.tweetInputWrapper}>
+        <p className={`subtext2 ${styles.replyingToCopy}`}>Replying to <span>{profileId}</span></p>
+        <textarea
+          className={styles.tweetInput}
+          onChange={onTweetChange}
+          ref={tweetTextRef}
+          style={{
+            minHeight: MIN_TEXTAREA_HEIGHT,
+            resize: "none",
+          }}
+          onFocus={onTextAreaFocus}
+          value={tweetText}
+          placeholder={
+            threadIndex < 1 ? "What's happening?" : "Add another Tweet"
+          }
+        />
+      </section>
+      <div onClick={onCancelTweetClick}>
+        {!onlyTweet && (
+          <StaticItem
+            className={isActive ? styles.cancel : styles.hideCancel}
+            src={"/images/thread-composer/x"}
+          />
+        )}
       </div>
     </motion.section>
   );

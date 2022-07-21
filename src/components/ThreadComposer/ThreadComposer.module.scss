@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .threadComposer {
   padding: 10px 16px 60px;
   position: fixed;
@@ -63,11 +65,29 @@
     }
   }
 
-  .tweetInput {
-    padding: 12px 0 20px 0px;
+  .tweetInputWrapper {
+    padding: 0;
     margin-left: 16px;
-    border: none;
     width: calc(100% - 62px);
+    border: none;
+    height: auto;
+  }
+  
+  .replyingToCopy {
+    margin: 0;
+    padding: 0;
+    color: $base-black;
+
+    > span {
+      color: $blue-500;
+      font-weight: 700;;
+    }
+  }
+
+  .tweetInput {
+    padding: 6px 0 20px 0px;
+    border: none;
+    width: 100%;
     resize: vertical;
     height: auto;
 

@@ -5,14 +5,21 @@ import { AnimatePresence } from "framer-motion";
 import { TestPickerPage, LoginPage } from "./pages";
 import { AuthProviderWrapper, useAuth } from "./authprovider";
 
-import { TestPickerLayout, HomeTimelineLayout, ProfilesLayout, TweetDetailLayout } from "./layouts";
+import {
+  TestPickerLayout,
+  HomeTimelineLayout,
+  ProfilesLayout,
+  TweetDetailLayout,
+  TweetComposerLayout,
+} from "./layouts";
 import mockDataProvider from "./dataprovider";
 
 import CONFIG from "./config";
 
 export default function App() {
-  const [activeTestOptions, setActiveTestOptions] =
-    React.useState(CONFIG.TEST_PARAMETERS);
+  const [activeTestOptions, setActiveTestOptions] = React.useState(
+    CONFIG.TEST_PARAMETERS
+  );
 
   // events
   const onTestOptionsChanged = (updatedOption) => {
@@ -35,61 +42,64 @@ export default function App() {
 
   return (
     <AuthProviderWrapper>
-        <Routes location={location} key={nextPath}>
-          <Route path="/test" element={<TestPickerLayout />}>
-            <Route path="login" element={<LoginPage />} />
-            <Route
-              path="picker"
-              element={
-                <TestPickerPage
-                  activeTestOptions={activeTestOptions}
-                  onTestOptionsChanged={onTestOptionsChanged}
-                />
-              }
-            />
-          </Route>
+      <Routes location={location} key={nextPath}>
+        <Route path="/test" element={<TestPickerLayout />}>
+          <Route path="login" element={<LoginPage />} />
+          <Route
+            path="picker"
+            element={
+              <TestPickerPage
+                activeTestOptions={activeTestOptions}
+                onTestOptionsChanged={onTestOptionsChanged}
+              />
+            }
+          />
+        </Route>
 
-          <Route
-            path="/"
-            element={
-              <RequireAuth>
-                <HomeTimelineLayout testOptions={activeTestOptions} />
-              </RequireAuth>
-            }
-          >
-            <Route path="*" element={<NoMatch />} />
-          </Route>
-          <Route
-            path="/mock/profile/:profileId"
-            element={
-              <RequireAuth>
-                <ProfilesLayout testOptions={activeTestOptions} />
-              </RequireAuth>
-            }
-          >
-            <Route path="*" element={<NoMatch />} />
-          </Route>
-          <Route
-            path="/mock/tweet/detail/:tweetId"
-            element={
-              <RequireAuth>
-                <TweetDetailLayout />
-              </RequireAuth>
-            }
-          >
-            <Route path="*" element={<NoMatch />} />
-          </Route>
-          <Route
-            path="/mock/tweet/composer"
-            element={
-              <RequireAuth>
-                <p>Tweet Composer</p>
-              </RequireAuth>
-            }
-          >
-            <Route path="*" element={<NoMatch />} />
-          </Route>
-        </Routes>
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <HomeTimelineLayout testOptions={activeTestOptions} />
+            </RequireAuth>
+          }
+        >
+          <Route path="*" element={<NoMatch />} />
+        </Route>
+        <Route
+          path="/mock/profile/:profileId"
+          element={
+            <RequireAuth>
+              <ProfilesLayout testOptions={activeTestOptions} />
+            </RequireAuth>
+          }
+        >
+          <Route path="*" element={<NoMatch />} />
+        </Route>
+        <Route
+          path="/mock/tweet/detail/:tweetId"
+          element={
+            <RequireAuth>
+              <TweetDetailLayout />
+            </RequireAuth>
+          }
+        >
+          <Route path="*" element={<NoMatch />} />
+        </Route>
+        <Route
+          path="/mock/tweet/composer/:profileId"
+          element={
+            <RequireAuth>
+              <TweetComposerLayout
+                activeCharacterTriggerCount={30}
+                activeTriggerUX={"Accelerator"}
+              />
+            </RequireAuth>
+          }
+        >
+          <Route path="*" element={<NoMatch />} />
+        </Route>
+      </Routes>
     </AuthProviderWrapper>
   );
 }
