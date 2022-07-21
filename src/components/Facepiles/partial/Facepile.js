@@ -2,7 +2,7 @@ import styles from "./Facepile.module.scss";
 import { StaticItem } from "../../../components";
 import { motion, Reorder } from "framer-motion";
 
-const Facepile = ({ facepile, avatarImage, index, total, direction }) => {
+const Facepile = ({ facepile, avatarImage, index, total, direction, showUnreadNotification }) => {
   return (
     <Reorder.Item
       value={facepile.id}
@@ -29,7 +29,7 @@ const Facepile = ({ facepile, avatarImage, index, total, direction }) => {
           src={`/images/accounts/${avatarImage}`}
         />
       </motion.div>
-      {facepile.unread && index === total && (
+      {facepile.unread && index === total && showUnreadNotification && (
         <span
           className={`${styles.unreadNotification} ${
             direction === "lefttoright"

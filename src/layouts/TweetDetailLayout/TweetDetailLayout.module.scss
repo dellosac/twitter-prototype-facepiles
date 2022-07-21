@@ -143,3 +143,42 @@
   bottom: 0;
   left: 0;
 }
+
+.replySection {
+  margin: 0;
+  padding: 16px;
+
+  .repliesList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .replyMetaSection {
+    display: flex;
+    justify-content: space-between;
+
+    > .facepileWrapper {
+      font-weight: 500;
+      display: flex;
+      min-height: 18px;
+      align-items: center;
+    }
+
+    .facepileSpan {
+      margin: 1px 14px 0;
+    }
+
+    > div {
+      color: $gray-700;
+
+      &:nth-child(1) {
+
+      }
+
+      &:nth-child(2) {
+        font-weight: 400;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import "../../styles/variables.scss";
+
+.root {
+  padding: 12px 0;
+  // display: flex;
+  border-bottom: 1px $gray-300 solid;
+}
+
+.avatarIcon {
+  display: block;
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  gap: 12px;
+
+  .headerMeta {
+    display: flex;
+    align-items: flex-start;
+    gap: 2px;
+    padding-bottom: 1px;
+
+    > p,
+    span,
+    img {
+      margin: 0;
+    }
+
+    .headerMetaName {
+      font-weight: bold;
+    }
+
+    .vertifiedIcon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+    }
+
+    .dot {
+      // display: inline-block;
+      color: $gray-700;
+    }
+
+    .headerMetaHandle {
+      color: $gray-700;
+    }
+
+    .headerMetaTimestamp {
+      color: $gray-700;
+    }
+
+    .overflowMenuButton {
+      position: absolute;
+      right: 16px;
+    }
+  }
+}
+
+.replyToCopy {
+    padding-bottom: 8px;
+    color: $gray-700;
+
+
+    > .replyToHandle {
+        color: $blue-500;
+    }
+}
+
+.copy {
+  min-height: 48px;
+}

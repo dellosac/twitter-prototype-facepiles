@@ -1,6 +1,6 @@
 import styles from "./TweetDetailLayout.module.scss";
 import { useParams, useNavigate } from "react-router-dom";
-import { StaticItem } from "../../components";
+import { StaticItem, MockTweetReply, Facepiles } from "../../components";
 import mockDataProvider from "../../dataprovider";
 import { Link } from "react-router-dom";
 
@@ -28,6 +28,8 @@ const TweetDetailLayout = () => {
     e.stopPropagation();
     navigate(`/mock/profile/${handle}`);
   };
+
+  const facePileReplies = replies.slice(replies.length - 3, replies.length);
 
   return (
     <article>
@@ -59,7 +61,11 @@ const TweetDetailLayout = () => {
                   alt="verified user"
                 />
               )}
-              <img className={styles.overflowMenuButton} src="/images/icons/Dots.svg" alt="overflow menu" />
+              <img
+                className={styles.overflowMenuButton}
+                src="/images/icons/Dots.svg"
+                alt="overflow menu"
+              />
             </div>
             <div className={styles.headerMeta}>
               <p className={styles.headerMetaHandle}>{handle}</p>
@@ -99,9 +105,36 @@ const TweetDetailLayout = () => {
           </section>
         </footer>
       </main>
-      <StaticItem className={styles.mockReplies} src="/images/mockimages/mockTweetReplies" />
-
-      <StaticItem className={styles.mockReplyFooter} src="/images/mockimages/mockReplyFooter" />
+      <section className={styles.replySection}>
+        <div className={styles.replyMetaSection}>
+          <div className={`${styles.facepileWrapper} subtext3`}>
+            <Facepiles
+              replies={facePileReplies}
+              direction={null}
+              showUnreadNotification={false}
+            />
+            <span className={styles.facepileSpan}>
+              {baseFakeReplies + replies.length} replies
+            </span>
+          </div>
+          <div className="subtext2">Last Reply 30s ago</div>
+        </div>
+        <ul className={styles.repliesList}>
+          {replies.map((reply) => {
+            return (
+              <MockTweetReply
+                key={`reply-${reply.id}`}
+                {...reply}
+                replyingTo={handle}
+              />
+            );
+          })}
+        </ul>
+      </section>
+      <StaticItem
+        className={styles.mockReplyFooter}
+        src="/images/mockimages/mockReplyFooter"
+      />
     </article>
   );
 };

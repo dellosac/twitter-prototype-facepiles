@@ -25,7 +25,7 @@ const FACE_ACCOUNTS_MOCK = [
   },
 ];
 
-const Facepiles = ({ replies, direction }) => {
+const Facepiles = ({ replies, direction, showUnreadNotification=true }) => {
   const [faceIndex, setFaceIndex] = useState(1);
   const [facepiles, setFacepiles] = useState(replies);
 
@@ -83,6 +83,7 @@ const Facepiles = ({ replies, direction }) => {
               index={index}
               total={facepiles.length - 1}
               direction={direction}
+              showUnreadNotification={showUnreadNotification}
             />
           );
         })}
