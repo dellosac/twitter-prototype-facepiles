@@ -1,14 +1,14 @@
 import styles from "./ProfileHeader.module.scss";
 import IMAGE_PRELOADER from "../../utils/";
 import StaticItem from "../StaticItem";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProfileHeader = (props) => {
+  const navigate = useNavigate();
+
   return (
     <div>
-      <a href="/">
-        <StaticItem src={"/images/profile/profile_" + props.profileId.replace("@","")} className={styles.profile} />
-      </a>
+      <StaticItem src={"/images/profile/profile_" + props.profileId.replace("@","")} className={styles.profile} onClick={() => navigate(-1)}/>
     </div>
   );
 };
