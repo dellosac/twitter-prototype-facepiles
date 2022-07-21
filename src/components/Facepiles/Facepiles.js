@@ -65,7 +65,9 @@ const Facepiles = ({ replies, direction, showUnreadNotification=true }) => {
       values={replies}
       // onClick={facePilesOnClick}
       style={{
-        transform: `translateX(${21 - 5 * (facepiles.length - 1)}px)`,
+        // transform: `translateX(${21 - 5 * (facepiles.length - 1)}px)`,
+        justifyContent: direction === "left" ? "flex-end" : "flex-start",
+        marginRight: "left" ? "10px" : "0px",
       }}
     >
       {/* <ul className={styles.facepilesroot} > */}
