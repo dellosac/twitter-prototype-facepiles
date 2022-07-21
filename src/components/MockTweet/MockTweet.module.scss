@@ -23,6 +23,7 @@
     align-items: flex-start;
     gap: 2px;
     padding-bottom: 1px;
+    position: relative;
 
     > p,
     span,
@@ -52,6 +53,11 @@
 
     .headerMetaTimestamp {
       color: $gray-700;
+    }
+
+    .overflowMenuButton {
+      position: absolute;
+      right: 0px;
     }
   }
 }

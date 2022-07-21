@@ -59,7 +59,7 @@ const TweetDetailLayout = () => {
                   alt="verified user"
                 />
               )}
-              <img src="/images/icons/iconDots.svg" alt="overflow menu" />
+              <img className={styles.overflowMenuButton} src="/images/icons/iconDots.svg" alt="overflow menu" />
             </div>
             <div className={styles.headerMeta}>
               <p className={styles.headerMetaHandle}>{handle}</p>

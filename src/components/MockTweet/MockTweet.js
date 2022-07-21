@@ -88,7 +88,7 @@ const MockTweet = ({
             <p className={styles.headerMetaHandle}>{handle}</p>
             <p className={styles.dot}>·</p>
             <p className={styles.headerMetaTimestamp}>{timestamp}</p>
-            <img src="/images/icons/iconDots.svg" alt="overflow menu" />
+            <img className={styles.overflowMenuButton} src="/images/icons/iconDots.svg" alt="overflow menu" />
           </div>
           <div className={styles.copy}>{copy}</div>
         </article>
