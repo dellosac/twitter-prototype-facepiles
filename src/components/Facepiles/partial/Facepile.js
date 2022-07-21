@@ -3,6 +3,9 @@ import { StaticItem } from "../../../components";
 import { motion, Reorder } from "framer-motion";
 
 const Facepile = ({ facepile, avatarImage, index, total, direction, showUnreadNotification }) => {
+  let readReplies = JSON.parse(localStorage.getItem('read-replies')) || [];
+  const replyIsRead = readReplies.includes(facepile.id)
+
   return (
     <Reorder.Item
       value={facepile.id}
@@ -29,7 +32,7 @@ const Facepile = ({ facepile, avatarImage, index, total, direction, showUnreadNo
           src={`/images/accounts/${avatarImage}`}
         />
       </motion.div>
-      {facepile.unread && index === total && showUnreadNotification && (
+      {!replyIsRead && index === total && showUnreadNotification && (
         <span
           className={`${styles.unreadNotification} ${
             direction === "lefttoright"

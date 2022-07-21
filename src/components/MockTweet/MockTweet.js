@@ -4,6 +4,7 @@ import StaticItem from "../StaticItem";
 import MockSocialRetweets from "./partials/MockSocialRetweets";
 import { Facepiles } from "../../components";
 import { useNavigate } from "react-router-dom";
+import mockDataProvider from "../../dataprovider";
 
 const MockTweet = ({
   id,
@@ -16,7 +17,7 @@ const MockTweet = ({
   replies,
   showFacePiles,
   socialretweets,
-  facePileDirection
+  facePileDirection,
 }) => {
   const { avatar, name, handle, verified } = tweetAccount;
   const hasSocialRetweets = socialretweets.length > 0;
@@ -25,43 +26,49 @@ const MockTweet = ({
   // Events
   const onRootClick = (e) => {
     e.preventDefault();
+    mockDataProvider.markTweetAsRead(id);
     navigate(`/mock/tweet/detail/${id}`);
-  }
+  };
 
   const onAvatarClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
     navigate(`/mock/profile/${handle}`);
-  }
+  };
 
   const onHeaderMetaClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
     navigate(`/mock/profile/${handle}`);
-  }
+  };
 
   const onReplyIconClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
     navigate(`/mock/tweet/composer/${handle}`);
-  }
+  };
 
   const onRetweetClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-  }
+  };
 
   const onLikeClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-  }
+  };
 
   const onOutgoingClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-  }
+  };
 
-  const repliesToShow = replies.filter(reply => reply.show);
+  let repliesToShow = replies.filter((reply) => reply.show);
+  const repliesToShowCount = repliesToShow.length;
+
+  if (repliesToShow.length >= 4) {
+    repliesToShow = repliesToShow.slice(repliesToShow.length - 3, repliesToShow.length);
+  }
 
   return (
     <section className={`${styles.root}`} onClick={onRootClick}>
@@ -88,7 +95,11 @@ const MockTweet = ({
             <p className={styles.headerMetaHandle}>{handle}</p>
             <p className={styles.dot}>·</p>
             <p className={styles.headerMetaTimestamp}>{timestamp}</p>
-            <img className={styles.overflowMenuButton} src="/images/icons/Dots.svg" alt="overflow menu" />
+            <img
+              className={styles.overflowMenuButton}
+              src="/images/icons/Dots.svg"
+              alt="overflow menu"
+            />
           </div>
           <div className={styles.copy}>{copy}</div>
         </article>
@@ -100,23 +111,39 @@ const MockTweet = ({
       >
         {showFacePiles && (
           <div className={styles.facepilesWrapper}>
-            <Facepiles className={styles.facepiles} replies={repliesToShow} direction={facePileDirection} />
+            <Facepiles
+              className={styles.facepiles}
+              replies={repliesToShow}
+              direction={facePileDirection}
+            />
           </div>
         )}
         <section className={styles.footerIcons}>
-          <span className={`subtext2 ${styles.footerIcon}`} onClick={onReplyIconClick}>
+          <span
+            className={`subtext2 ${styles.footerIcon}`}
+            onClick={onReplyIconClick}
+          >
             <img src="/images/icons/Reply.svg" alt="replies" />
-            {baseFakeReplies + repliesToShow.length}
+            {baseFakeReplies + repliesToShowCount}
           </span>
-          <span className={`subtext2 ${styles.footerIcon}`} onClick={onRetweetClick}>
+          <span
+            className={`subtext2 ${styles.footerIcon}`}
+            onClick={onRetweetClick}
+          >
             <img src="/images/icons/Retweet.svg" alt="retweets" />
             {retweets}
           </span>
-          <span className={`subtext2 ${styles.footerIcon}`} onClick={onLikeClick}>
+          <span
+            className={`subtext2 ${styles.footerIcon}`}
+            onClick={onLikeClick}
+          >
             <img src="/images/icons/Heart.svg" alt="likes" />
             {likes}
           </span>
-          <span className={`subtext2 ${styles.footerIcon}`} onClick={onOutgoingClick}>
+          <span
+            className={`subtext2 ${styles.footerIcon}`}
+            onClick={onOutgoingClick}
+          >
             <img src="/images/icons/Outgoing.svg" alt="share" />
           </span>
         </section>

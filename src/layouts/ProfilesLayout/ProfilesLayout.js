@@ -7,7 +7,6 @@ import mockDataProvider from "../../dataprovider";
 
 const ProfilesLayout = ({ testOptions }) => {
   let { profileId } = useParams();
-  mockDataProvider.reset();
 
   return (
     <main className={styles.main}>
