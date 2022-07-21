@@ -10,9 +10,7 @@ const ProfilesLayout = ({ testOptions }) => {
 
   return (
     <main className={styles.main}>
-      <ProfileHeader />
-      { profileId }
-
+      <ProfileHeader profileId={ profileId } />
       <button className={styles.composeButton}>
         <img src="/images/icons/iconCompose.svg" alt="compose a tweet" />
       </button>
