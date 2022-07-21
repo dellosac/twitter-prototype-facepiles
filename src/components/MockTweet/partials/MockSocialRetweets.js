@@ -14,7 +14,7 @@ const MockSocialRetweets = ({ socialretweets }) => {
 
   return (
     <section className={styles.root}>
-      <img className={styles.icon} src="/images/icons/IconSocialRetweet.svg" alt="social retweet" />
+      <img className={styles.icon} src="/images/icons/SocialRetweet.svg" alt="social retweet" />
       <span className="subtext2">
         {copy}
       </span>

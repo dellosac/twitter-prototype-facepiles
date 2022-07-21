@@ -33,12 +33,12 @@ const TweetDetailLayout = () => {
     <article>
       <header className={styles.header}>
         <Link to="/" className={styles.backBtn}>
-          <img src="/images/icons/IconLeftArrow.svg" alt="go back" />
+          <img src="/images/icons/LeftArrow.svg" alt="go back" />
         </Link>
         <p className={`headline2 ${styles.headerTitle}`}>Tweet</p>
         <img
           className={styles.mockArrow}
-          src="/images/icons/IconLeftArrow.svg"
+          src="/images/icons/LeftArrow.svg"
           alt="go back"
         />
       </header>
@@ -55,11 +55,11 @@ const TweetDetailLayout = () => {
               {verified && (
                 <img
                   className={styles.vertifiedIcon}
-                  src="/images/icons/IconVerified.svg"
+                  src="/images/icons/Verified.svg"
                   alt="verified user"
                 />
               )}
-              <img className={styles.overflowMenuButton} src="/images/icons/iconDots.svg" alt="overflow menu" />
+              <img className={styles.overflowMenuButton} src="/images/icons/Dots.svg" alt="overflow menu" />
             </div>
             <div className={styles.headerMeta}>
               <p className={styles.headerMetaHandle}>{handle}</p>
@@ -71,7 +71,7 @@ const TweetDetailLayout = () => {
         <footer className={`${styles.footer}`}>
           <section className={styles.footerIcons}>
             <span className={`subtext2 ${styles.footerIcon}`}>
-              <img src="/images/icons/IconRetweet.svg" alt="retweets" />
+              <img src="/images/icons/Retweet.svg" alt="retweets" />
               {retweets} Retweets
             </span>
             <span className={`subtext2 ${styles.footerIcon}`}>
@@ -85,16 +85,16 @@ const TweetDetailLayout = () => {
         <footer className={`${styles.footer} ${styles.footerIconWrapper}`}>
           <section className={styles.footerIcons}>
             <span className={`subtext2 ${styles.footerIcon}`}>
-              <img src="/images/icons/IconReply.svg" alt="replies" />
+              <img src="/images/icons/Reply.svg" alt="replies" />
             </span>
             <span className={`subtext2 ${styles.footerIcon}`}>
-              <img src="/images/icons/IconRetweet.svg" alt="retweets" />
+              <img src="/images/icons/Retweet.svg" alt="retweets" />
             </span>
             <span className={`subtext2 ${styles.footerIcon}`}>
-              <img src="/images/icons/IconHeart.svg" alt="likes" />
+              <img src="/images/icons/Heart.svg" alt="likes" />
             </span>
             <span className={`subtext2 ${styles.footerIcon}`}>
-              <img src="/images/icons/IconOutgoing.svg" alt="share" />
+              <img src="/images/icons/Outgoing.svg" alt="share" />
             </span>
           </section>
         </footer>

@@ -81,14 +81,14 @@ const MockTweet = ({
             {verified && (
               <img
                 className={styles.vertifiedIcon}
-                src="/images/icons/IconVerified.svg"
+                src="/images/icons/Verified.svg"
                 alt="verified user"
               />
             )}
             <p className={styles.headerMetaHandle}>{handle}</p>
             <p className={styles.dot}>·</p>
             <p className={styles.headerMetaTimestamp}>{timestamp}</p>
-            <img className={styles.overflowMenuButton} src="/images/icons/iconDots.svg" alt="overflow menu" />
+            <img className={styles.overflowMenuButton} src="/images/icons/Dots.svg" alt="overflow menu" />
           </div>
           <div className={styles.copy}>{copy}</div>
         </article>
@@ -105,19 +105,19 @@ const MockTweet = ({
         )}
         <section className={styles.footerIcons}>
           <span className={`subtext2 ${styles.footerIcon}`} onClick={onReplyIconClick}>
-            <img src="/images/icons/IconReply.svg" alt="replies" />
+            <img src="/images/icons/Reply.svg" alt="replies" />
             {baseFakeReplies + repliesToShow.length}
           </span>
           <span className={`subtext2 ${styles.footerIcon}`} onClick={onRetweetClick}>
-            <img src="/images/icons/IconRetweet.svg" alt="retweets" />
+            <img src="/images/icons/Retweet.svg" alt="retweets" />
             {retweets}
           </span>
           <span className={`subtext2 ${styles.footerIcon}`} onClick={onLikeClick}>
-            <img src="/images/icons/IconHeart.svg" alt="likes" />
+            <img src="/images/icons/Heart.svg" alt="likes" />
             {likes}
           </span>
           <span className={`subtext2 ${styles.footerIcon}`} onClick={onOutgoingClick}>
-            <img src="/images/icons/IconOutgoing.svg" alt="share" />
+            <img src="/images/icons/Outgoing.svg" alt="share" />
           </span>
         </section>
       </footer>
