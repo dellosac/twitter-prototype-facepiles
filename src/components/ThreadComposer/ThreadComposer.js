@@ -26,8 +26,6 @@ const TweetComposer = ({
   const [tweetHeight, setTweetHeight] = useState(MIN_TEXTAREA_HEIGHT);
   let { profileId } = useParams();
 
-  mockDataProvider.reset();
-
   // events
   const onCancelTweetClick = (event) => {
     event.preventDefault();

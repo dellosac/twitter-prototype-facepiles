@@ -11,7 +11,6 @@ const TweetDetailLayout = () => {
   const { name, avatar, verified } =
     mockDataProvider.getAccountByHandle(handle);
 
-  mockDataProvider.reset();
   const repliesToShow = replies.filter((reply) => reply.show);
 
   let navigate = useNavigate();

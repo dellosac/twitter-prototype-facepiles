@@ -9,6 +9,9 @@ import { IMAGE_PRELOADER } from "./utils";
 
 sessionStorage.setItem("show_ghosts", 0);
 IMAGE_PRELOADER.loadImages();
+// reset localstorage
+console.log("reset storage");
+localStorage.setItem("read-replies", JSON.stringify([]));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
