@@ -46,6 +46,21 @@ const MockTweet = ({
     navigate("/mock/tweet/composer");
   }
 
+  const onRetweetClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  const onLikeClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  const onOutgoingClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
   const repliesToShow = replies.filter(reply => reply.show);
 
   return (
@@ -93,15 +108,15 @@ const MockTweet = ({
             <img src="/images/icons/IconReply.svg" alt="replies" />
             {baseFakeReplies + repliesToShow.length}
           </span>
-          <span className={`subtext2 ${styles.footerIcon}`}>
+          <span className={`subtext2 ${styles.footerIcon}`} onClick={onRetweetClick}>
             <img src="/images/icons/IconRetweet.svg" alt="retweets" />
             {retweets}
           </span>
-          <span className={`subtext2 ${styles.footerIcon}`}>
+          <span className={`subtext2 ${styles.footerIcon}`} onClick={onLikeClick}>
             <img src="/images/icons/IconHeart.svg" alt="likes" />
             {likes}
           </span>
-          <span className={`subtext2 ${styles.footerIcon}`}>
+          <span className={`subtext2 ${styles.footerIcon}`} onClick={onOutgoingClick}>
             <img src="/images/icons/IconOutgoing.svg" alt="share" />
           </span>
         </section>
