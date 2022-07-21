@@ -33,12 +33,12 @@ const TweetDetailLayout = () => {
     <article>
       <header className={styles.header}>
         <Link to="/" className={styles.backBtn}>
-          <img src="/images/icons/iconLeftArrow.svg" alt="go back" />
+          <img src="/images/icons/IconLeftArrow.svg" alt="go back" />
         </Link>
         <p className={`headline2 ${styles.headerTitle}`}>Tweet</p>
         <img
           className={styles.mockArrow}
-          src="/images/icons/iconLeftArrow.svg"
+          src="/images/icons/IconLeftArrow.svg"
           alt="go back"
         />
       </header>
