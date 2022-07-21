@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 const ProfileHeader = (props) => {
   return (
     <div>
-      <StaticItem src="./images/profile/profile_h_wang84" className={styles.globe} />
+      <a href="/">
+        <StaticItem src={"/images/profile/profile_" + props.profileId.replace("@","")} className={styles.profile} />
+      </a>
     </div>
   );
 };
