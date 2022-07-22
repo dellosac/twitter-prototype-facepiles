@@ -28,7 +28,10 @@ const TweetDetailLayout = () => {
     navigate(`/mock/profile/${handle}`);
   };
 
-  const facePileReplies = replies.slice(replies.length - 3, replies.length);
+  let facePileReplies = replies;
+  if(replies.length >= 4) {
+    facePileReplies = replies.slice(replies.length - 3, replies.length);
+  }
 
   return (
     <article>
@@ -109,7 +112,7 @@ const TweetDetailLayout = () => {
           <div className={`${styles.facepileWrapper} subtext3`}>
             <Facepiles
               replies={facePileReplies}
-              direction={null}
+              direction={""}
               showUnreadNotification={false}
             />
             <span className={styles.facepileSpan}>

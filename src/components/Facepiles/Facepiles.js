@@ -25,7 +25,7 @@ const FACE_ACCOUNTS_MOCK = [
   },
 ];
 
-const Facepiles = ({ replies, direction, showUnreadNotification=true }) => {
+const Facepiles = ({ replies, direction, showUnreadNotification = true }) => {
   const [faceIndex, setFaceIndex] = useState(1);
   const [facepiles, setFacepiles] = useState(replies);
 
@@ -67,11 +67,16 @@ const Facepiles = ({ replies, direction, showUnreadNotification=true }) => {
       style={{
         // transform: `translateX(${21 - 5 * (facepiles.length - 1)}px)`,
         justifyContent: "flex-end",
-        right: direction === "lefttoright" ? `${18 + ((3 - facepiles.length) * 10)}px` : "",
-        left: direction === "lefttoright" ? "" : `${5 + ((3 - facepiles.length) * 10)}px`,
+        right:
+          direction === "lefttoright"
+            ? `${18 + (3 - facepiles.length) * 10}px`
+            : "",
+        left:
+          direction === "righttoleft"
+            ? `${5 + (3 - facepiles.length) * 10}px`
+            : "",
       }}
     >
-      {/* <ul className={styles.facepilesroot} > */}
       <AnimatePresence initial={false}>
         {facepiles.map((facepileData, index) => {
           const tweetAccount = mockDataProvider.getAccountByHandle(
