@@ -30,5 +30,21 @@
         "value": "righttoleft"
       }
     ]
+  },
+  "FACEPILE_ANIMATION": {
+    "name": "Parameter 3",
+    "description": "Facepile Animation",
+    "letterMasks": ["o", "p"],
+    "activeOptionIndex": 0,
+    "options": [
+      {
+        "name": "Animation On",
+        "value": true
+      },
+      {
+        "name": "Animation Off",
+        "value": false
+      }
+    ]
   }
 }

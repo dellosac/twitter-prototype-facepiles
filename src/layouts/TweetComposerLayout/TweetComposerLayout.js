@@ -99,9 +99,6 @@ const TweetComposerLayout = ({
     setActiveTweetIndex(0);
   };
 
-  console.log("active index", activeTweetIndex);
-  console.log("isKeyboardVisible", isKeyboardVisible);
-
   return (
     <main className={styles.main}>
       <MockiOSHeader

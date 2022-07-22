@@ -63,6 +63,7 @@ const HomeTimelineLayout = ({ testOptions }) => {
                 tweetAccount={tweetAccount}
                 showFacePiles={testOptions.FACEPILES.options[testOptions.FACEPILES.activeOptionIndex].value === "facepiles"}
                 facePileDirection={testOptions.FACEPILE_DIRECTION.options[testOptions.FACEPILE_DIRECTION.activeOptionIndex].value}
+                animateFacepiles={testOptions.FACEPILE_ANIMATION.options[testOptions.FACEPILE_ANIMATION.activeOptionIndex].value}
               />
             </li>
           );

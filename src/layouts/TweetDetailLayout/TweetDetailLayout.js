@@ -111,6 +111,7 @@ const TweetDetailLayout = () => {
         <div className={styles.replyMetaSection}>
           <div className={`${styles.facepileWrapper} subtext3`}>
             <Facepiles
+              shouldAnimate={false}
               replies={facePileReplies}
               direction={""}
               showUnreadNotification={false}

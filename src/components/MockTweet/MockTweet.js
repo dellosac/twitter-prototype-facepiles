@@ -18,6 +18,7 @@ const MockTweet = ({
   showFacePiles,
   socialretweets,
   facePileDirection,
+  animateFacepiles
 }) => {
   const { avatar, name, handle, verified } = tweetAccount;
   const hasSocialRetweets = socialretweets.length > 0;
@@ -67,7 +68,10 @@ const MockTweet = ({
   const repliesToShowCount = repliesToShow.length;
 
   if (repliesToShow.length >= 4) {
-    repliesToShow = repliesToShow.slice(repliesToShow.length - 3, repliesToShow.length);
+    repliesToShow = repliesToShow.slice(
+      repliesToShow.length - 3,
+      repliesToShow.length
+    );
   }
 
   return (
@@ -112,6 +116,7 @@ const MockTweet = ({
         {showFacePiles && (
           <div className={styles.facepilesWrapper}>
             <Facepiles
+              shouldAnimate={animateFacepiles}
               className={styles.facepiles}
               replies={repliesToShow}
               direction={facePileDirection}

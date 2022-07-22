@@ -5,6 +5,7 @@ import Facepile from "./partial/Facepile";
 import mockDataProvider from "../../dataprovider";
 
 import { Reorder, AnimatePresence } from "framer-motion";
+import { Children } from "react";
 
 const FACE_ACCOUNTS_MOCK = [
   {
@@ -25,7 +26,12 @@ const FACE_ACCOUNTS_MOCK = [
   },
 ];
 
-const Facepiles = ({ replies, direction, showUnreadNotification = true }) => {
+const Facepiles = ({
+  shouldAnimate = false,
+  replies,
+  direction,
+  showUnreadNotification = true,
+}) => {
   const [faceIndex, setFaceIndex] = useState(1);
   const [facepiles, setFacepiles] = useState(replies);
 
@@ -53,6 +59,69 @@ const Facepiles = ({ replies, direction, showUnreadNotification = true }) => {
   };
 
   return (
+    <_RootWrapper
+      shouldAnimate={shouldAnimate}
+      setFacepiles={setFacepiles}
+      facepiles={facepiles}
+      replies={replies}
+      direction={direction}
+    >
+      {facepiles.map((facepileData, index) => {
+        const tweetAccount = mockDataProvider.getAccountByHandle(
+          facepileData.handle
+        );
+
+        return (
+          <Facepile
+            shouldAnimate={shouldAnimate}
+            key={`facepile-key-${facepileData.id}`}
+            facepile={facepileData}
+            avatarImage={tweetAccount.avatar}
+            index={index}
+            total={facepiles.length - 1}
+            direction={direction}
+            showUnreadNotification={showUnreadNotification}
+          />
+        );
+      })}
+    </_RootWrapper>
+  );
+};
+
+const _RootWrapper = ({
+  shouldAnimate = true,
+  setFacepiles,
+  facepiles,
+  replies,
+  direction,
+  children,
+}) => {
+  if (!shouldAnimate) {
+    return (
+      <ul
+        className={`${styles.facepilesroot} ${
+          direction === "lefttoright"
+            ? styles.directionlefttoright
+            : styles.directionrighttoleft
+        }`}
+        style={{
+          justifyContent: "flex-end",
+          right:
+            direction === "lefttoright"
+              ? `${18 + (3 - facepiles.length) * 10}px`
+              : "",
+          left:
+            direction === "righttoleft"
+              ? `${5 + (3 - facepiles.length) * 10}px`
+              : "",
+        }}
+      >
+        {children}
+      </ul>
+    );
+  }
+
+  return (
     <Reorder.Group
       as="ul"
       axis="x"
@@ -63,9 +132,7 @@ const Facepiles = ({ replies, direction, showUnreadNotification = true }) => {
           : styles.directionrighttoleft
       }`}
       values={replies}
-      // onClick={facePilesOnClick}
       style={{
-        // transform: `translateX(${21 - 5 * (facepiles.length - 1)}px)`,
         justifyContent: "flex-end",
         right:
           direction === "lefttoright"
@@ -77,25 +144,7 @@ const Facepiles = ({ replies, direction, showUnreadNotification = true }) => {
             : "",
       }}
     >
-      <AnimatePresence initial={false}>
-        {facepiles.map((facepileData, index) => {
-          const tweetAccount = mockDataProvider.getAccountByHandle(
-            facepileData.handle
-          );
-
-          return (
-            <Facepile
-              key={`facepile-key-${facepileData.id}`}
-              facepile={facepileData}
-              avatarImage={tweetAccount.avatar}
-              index={index}
-              total={facepiles.length - 1}
-              direction={direction}
-              showUnreadNotification={showUnreadNotification}
-            />
-          );
-        })}
-      </AnimatePresence>
+      <AnimatePresence initial={false}>{children}</AnimatePresence>
     </Reorder.Group>
   );
 };

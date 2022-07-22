@@ -47,7 +47,6 @@ class MockDataProviderSingleton {
 
     this._timer = null;
     localStorage.setItem('read-replies', JSON.stringify([]));
-    console.log("reset", this._timeline);
   }
 
   markTweetAsRead(tweetID) {
