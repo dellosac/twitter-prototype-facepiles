@@ -20,6 +20,7 @@ const Facepile = ({
       shouldAnimate={shouldAnimate}
       facepile={facepile}
       avatarImage={avatarImage}
+      direction={direction}
     >
       <motion.div className={styles.avatarIconWrapper}>
         <StaticItem
@@ -40,7 +41,7 @@ const Facepile = ({
   );
 };
 
-const _RootWrapper = ({ shouldAnimate, facepile, avatarImage, children }) => {
+const _RootWrapper = ({ shouldAnimate, direction, facepile, avatarImage, children }) => {
   if (!shouldAnimate) {
     return <li className={styles.root}>{children}</li>;
   }
@@ -49,7 +50,7 @@ const _RootWrapper = ({ shouldAnimate, facepile, avatarImage, children }) => {
     <Reorder.Item
       value={facepile.id}
       id={avatarImage}
-      initial={{ opacity: 0, x: 3, y: 0 }}
+      initial={{ opacity: 0, x: direction === "lefttoright" ? 3 : -3, y: 0 }}
       animate={{
         opacity: 1,
         x: 0,
