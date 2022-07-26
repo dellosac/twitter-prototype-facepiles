@@ -14,7 +14,7 @@
 }
 
 .submitWrapper {
-  background-color: #B9CAD3;
+  background-color: white;
   width: calc(100% - 64px);
   display: flex;
   justify-content: flex-end;
@@ -22,7 +22,8 @@
   top: 0;
   left: 0;
   padding: 0 32px;
-  border-bottom: 1px solid white;
+  border-top: 3px solid #B9CAD3;
+  border-bottom: 3px solid #B9CAD3;
 
   @media only screen and (min-width: 700px) {
     position: static;
@@ -40,7 +41,7 @@
     0 0 3px 1px rgba(101, 119, 134, 0.15);
   font-weight: 600;
   text-decoration: none;
-  margin: 16px 0;
+  margin: 16px 8px 16px 0;
   transition: background-color 150ms ease-in;
   border: none;
 
