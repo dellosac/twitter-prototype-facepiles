@@ -16,10 +16,20 @@ class MockDataProviderSingleton {
 
   checkToAddTweet() {
     if (Math.random() >= 0.3) {
+      let tweetsWithUnshownReplies = this._timeline.filter(tweet => {
+        let tweetsWithUnshownReplies = tweet.replies.filter(reply => !reply.show);
+        return tweetsWithUnshownReplies.length
+      });
+      
+      if(tweetsWithUnshownReplies.length <= 0) {
+        clearInterval(this._timer);
+        return;
+      }
+
       const randomTweetIndex = Math.floor(
-        Math.random() * this._timeline.length
+        Math.random() * tweetsWithUnshownReplies.length
       );
-      let randomTweetReply = this._timeline[randomTweetIndex].replies.find(
+      let randomTweetReply = tweetsWithUnshownReplies[randomTweetIndex].replies.find(
         (reply) => !reply.show
       );
       if (!!randomTweetReply) {
@@ -46,7 +56,7 @@ class MockDataProviderSingleton {
     this._timeline = clonedTweetsArray;
 
     this._timer = null;
-    localStorage.setItem('read-replies', JSON.stringify([]));
+    localStorage.setItem('read-replies', JSON.stringify(["reply-3-root-tweet-1", "reply-2-root-tweet-1", "reply-2-root-tweet-2"]));
   }
 
   markTweetAsRead(tweetID) {

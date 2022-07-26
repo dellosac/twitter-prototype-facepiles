@@ -4,6 +4,10 @@
   padding: 12px 16px;
   // display: flex;
   border-bottom: 1px $gray-300 solid;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .avatarIcon {

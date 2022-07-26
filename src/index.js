@@ -11,7 +11,7 @@ sessionStorage.setItem("show_ghosts", 0);
 IMAGE_PRELOADER.loadImages();
 // reset localstorage
 console.log("reset storage");
-localStorage.setItem("read-replies", JSON.stringify([]));
+localStorage.setItem("read-replies", JSON.stringify(["reply-3-root-tweet-1", "reply-2-root-tweet-1", "reply-2-root-tweet-2"]));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
