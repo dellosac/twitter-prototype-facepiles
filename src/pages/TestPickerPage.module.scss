@@ -13,6 +13,24 @@
   font-weight: 700;
 }
 
+.submitWrapper {
+  background-color: #B9CAD3;
+  width: calc(100% - 64px);
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 32px;
+  border-bottom: 1px solid white;
+
+  @media only screen and (min-width: 700px) {
+    position: static;
+    background: transparent;
+    border: none;
+  }
+}
+
 .submitLink {
   background-color: rgb(15, 20, 25);
   padding: 16px;
@@ -26,7 +44,7 @@
   transition: background-color 150ms ease-in;
   border: none;
 
-  float: right;
+  // float: right;
 
   &:hover {
     background-color: rgb(39, 44, 48);

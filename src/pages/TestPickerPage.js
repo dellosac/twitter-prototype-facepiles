@@ -23,11 +23,13 @@ const TestPickerPage = ({ activeTestOptions, onTestOptionsChanged }) => {
           />
         );
       })}
-      <TestPickerTransition entranceDelay={0.5}>
-        <Link className={styles.submitLink} to="/">
-          Submit Test Changes
-        </Link>
-      </TestPickerTransition>
+      {/* <TestPickerTransition entranceDelay={0.5}> */}
+        <section className={styles.submitWrapper}>
+          <Link className={styles.submitLink} to="/">
+            Submit Test Changes
+          </Link>
+        </section>
+      {/* </TestPickerTransition> */}
     </React.Fragment>
   );
 };
