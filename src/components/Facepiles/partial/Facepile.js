@@ -11,6 +11,7 @@ const Facepile = ({
   total,
   direction,
   showUnreadNotification,
+  facepileCount
 }) => {
   let readReplies = JSON.parse(localStorage.getItem("read-replies")) || [];
   const replyIsRead = readReplies.includes(facepile.id);
@@ -33,8 +34,9 @@ const Facepile = ({
           className={`${styles.unreadNotification} ${
             direction === "lefttoright"
               ? styles.directionlefttoright
-              : styles.directionrighttoleft
+              : styles.directionlefttoright
           }`}
+          style={{marginRight: direction === "lefttoright" ? "" : (-10 * (facepileCount - 1)) + -3 + "px" }}
         />
       )}
     </_RootWrapper>

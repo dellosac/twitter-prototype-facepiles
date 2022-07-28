@@ -81,6 +81,7 @@ const Facepiles = ({
             total={facepiles.length - 1}
             direction={direction}
             showUnreadNotification={showUnreadNotification}
+            facepileCount={facepiles.length}
           />
         );
       })}
