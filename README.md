@@ -1,6 +1,6 @@
 # Twitter Creative Systems: Facepiles Research
 
-In this UX research experiment, we're testing the inclusion of face piles (user profile avatars in a circle) that appear in real-time when users engage with a tweet. We are have three different parameters were are testing:
+In this UX research experiment, we're testing the inclusion of face piles (user profile avatars in a circle) that appear in real-time when users engage with a tweet. We are have three different parameters with two options each we are testing:
 
 - Parameter 1: Facepiles On/Off
     - A: Facepiles On
