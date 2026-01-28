@@ -7,31 +7,32 @@ import TestPickerTransition from "../layouts/TestPickerLayout/TestPickerTransiti
 import styles from "./TestPickerPage.module.scss";
 
 const TestPickerPage = ({ activeTestOptions, onTestOptionsChanged }) => {
-  const _testOptionsKeys = Object.keys(activeTestOptions);
+    const _testOptionsKeys = Object.keys(activeTestOptions);
 
-  return (
-    <React.Fragment>
-      {_testOptionsKeys.map((testOptionKey, index) => {
-        const parameter = activeTestOptions[testOptionKey];
+    return (
+        <React.Fragment>
+            {/* Loop through test options */}
+            {_testOptionsKeys.map((testOptionKey, index) => {
+                const parameter = activeTestOptions[testOptionKey];
 
-        return (
-          <TestOptionSection
-            key={`test-option-${index}`}
-            parameter={parameter}
-            testKey={testOptionKey}
-            onOptionChangedCallback={onTestOptionsChanged}
-          />
-        );
-      })}
-      {/* <TestPickerTransition entranceDelay={0.5}> */}
-        <section className={styles.submitWrapper}>
-          <Link className={styles.submitLink} to="/">
-            Submit Test Changes
-          </Link>
-        </section>
-      {/* </TestPickerTransition> */}
-    </React.Fragment>
-  );
+                return (
+                    <TestOptionSection
+                        key={`test-option-${index}`}
+                        parameter={parameter}
+                        testKey={testOptionKey}
+                        onOptionChangedCallback={onTestOptionsChanged}
+                    />
+                );
+            })}
+            {/* <TestPickerTransition entranceDelay={0.5}> */}
+            <section className={styles.submitWrapper}>
+                <Link className={styles.submitLink} to="/">
+                    Submit Test Changes
+                </Link>
+            </section>
+            {/* </TestPickerTransition> */}
+        </React.Fragment>
+    );
 };
 
 export default TestPickerPage;

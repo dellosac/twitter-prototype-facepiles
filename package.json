@@ -1,51 +1,54 @@
 {
-  "name": "mte-facepile-replies",
-  "version": "0.0.1",
-  "description": "Rapid research test",
-  "engines": {
-    "node": "16.x"
-  },
-  "private": true,
-  "dependencies": {
-    "@lottiefiles/react-lottie-player": "^3.4.7",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "framer-motion": "^6.3.6",
-    "node-sass": "^7.0.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "serve": "^13.0.2",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "npm run image_manifest; react-scripts start",
-    "build": "npm run image_manifest; react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "production_test": "npm run image_manifest; react-scripts build; serve -s build -l 4000",
-    "image_manifest": "node ./scripts/generateImageManifest.js",
-    "static_site_sandbox": "yarn build; static-sites publish --sandbox --serve-missing-directories test ./build --max-file-count 250"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "make-twitter-easier-facepile-replies",
+    "version": "0.0.1",
+    "description": "Rapid research test. We are testing if ",
+    "engines": {
+        "node": "16.x"
+    },
+    "private": true,
+    "dependencies": {
+        "@lottiefiles/react-lottie-player": "^3.4.7",
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^13.3.0",
+        "@testing-library/user-event": "^13.5.0",
+        "framer-motion": "^6.3.6",
+        "node-sass": "^7.0.1",
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0",
+        "react-router": "^6.3.0",
+        "react-router-dom": "^6.3.0",
+        "react-scripts": "5.0.1",
+        "serve": "^13.0.2",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "npm run image_manifest; react-scripts start",
+        "build": "npm run image_manifest; react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "production_test": "npm run image_manifest; react-scripts build; serve -s build -l 4000",
+        "image_manifest": "node ./scripts/generateImageManifest.js",
+        "static_site_sandbox": "yarn build; static-sites publish --sandbox --serve-missing-directories test ./build --max-file-count 250"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "semver": "^7.5.4"
+    }
 }
