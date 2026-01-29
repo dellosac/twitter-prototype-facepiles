@@ -11,6 +11,7 @@
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^13.3.0",
         "@testing-library/user-event": "^13.5.0",
+        "express": "^5.2.1",
         "framer-motion": "^6.3.6",
         "node-sass": "^7.0.1",
         "react": "^18.1.0",
@@ -22,8 +23,9 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "npm run image_manifest; react-scripts start",
         "build": "npm run image_manifest; react-scripts build",
+        "dev": "react-scripts start",
+        "start": "npm run image_manifest; node server.js",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "production_test": "npm run image_manifest; react-scripts build; serve -s build -l 4000",
@@ -50,5 +52,6 @@
     },
     "devDependencies": {
         "semver": "^7.5.4"
-    }
+    },
+    "proxy": "http://localhost:5000"
 }
