@@ -1,9 +1,9 @@
 {
     "name": "make-twitter-easier-facepile-replies",
     "version": "0.0.1",
-    "description": "Rapid research test. We are testing if ",
+    "description": "Rapid research test",
     "engines": {
-        "node": "16.x"
+        "node": ">=16.x"
     },
     "private": true,
     "dependencies": {
